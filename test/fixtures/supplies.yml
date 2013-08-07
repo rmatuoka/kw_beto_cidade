@@ -1,0 +1,11 @@
+one:
+  product_id: 1
+  quantity: 1
+  buy: false
+  input_date: 2013-01-28
+
+two:
+  product_id: 1
+  quantity: 1
+  buy: false
+  input_date: 2013-01-28

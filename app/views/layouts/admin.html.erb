@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><%= content_for?(:title) ? "Administrador Korewa - " + yield(:title) : "Administrador Korewa" %></title>
+
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width" />
+
+<title><%= content_for?(:title) ? "Administrador Korewa - " + yield(:title) : "Administrador Korewa" %></title>
+
+<%= stylesheet_link_tag "admin"%>
+<%= stylesheet_link_tag "foundation"%>
+<%= stylesheet_link_tag "app"%>
+
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag "modernizr.foundation" %>
+<%= javascript_include_tag "menuadmin.js" %>
+<%= javascript_include_tag "jquery.foundation.alerts.js" %>
+
+<script>
+
+
+jQuery(document).ready(function() 
+    { 
+	//	jQuery("li:first.parent > a").trigger('click');
+		$(document).foundationAlerts();
+        //jQuery("table").tablesorter(); 
+    } 
+);
+</script>
+
+<%=yield :head%>
+</head>
+<body>
+
+<%=render :file => "layouts/_header.html.erb"%>
+
+<div id="Content">
+	<div id="MainBar" class="nine columns">
+		<div id="Content" class="twelve columns">
+			<%=yield %>
+		</div>
+	</div>
+</div>
+
+<div id="Footer" class="twelve columns">
+	<%=render :file => "layouts/_footer.html.erb"%>
+</div>
+
+<!-- Included JS Files (Compressed) -->
+<script src="javascripts/jquery.js"></script>
+<script src="javascripts/foundation.min.js"></script>
+
+<!-- Initialize JS Plugins -->
+<script src="javascripts/app.js"></script>
+
+
+<script>
+$(window).load(function(){
+  $("#featured").orbit();
+});
+</script>
+</body>
+</html>

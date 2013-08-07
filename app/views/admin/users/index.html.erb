@@ -1,0 +1,44 @@
+<% 
+	content_for :title do "Usuários" end
+%>
+<h1>Usuários</h1>
+<br />
+
+<div id="name" class="twelve columns">
+	<%=link_to "Novo usuário", new_admin_user_path, :class => "button", :style => "float:right;" %>
+</div>
+
+<div id="search" class="twelve columns">
+<p>Informe o nome, sobrenome ou e-mail do usuário.</p>
+	<%=form_tag '/admin/users/search', :method => :get, :name=>"formkeyword"%>
+		<%=text_field_tag :keyword, nil %>
+		<%=submit_tag "Buscar", :class => "button secondary"%>
+	</form>
+</div>
+
+<table class="twelve columns">
+  <tr>
+    <th>Nome</th>
+    <th>Sobrenome</th>
+	<th>Email</th>
+	<th></th>
+	<th></th>
+	<th></th>
+  </tr>
+  <% for user in @users %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.email%></td>
+      <td><%= link_to "Show", admin_user_path(user) %></td>
+      <td><%= link_to "Edit", edit_admin_user_path(user) %></td>
+      <td><%= link_to "Destroy", admin_user_path(user), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @users %>
+
+<script>
+	document.getElementById('keyword').focus();
+</script>

@@ -1,0 +1,155 @@
+/* CSS Document */
+*
+{
+	margin:0;
+	padding:0;
+	/*font-family:Verdana, Geneva, sans-serif;*/
+	font-size:12px;
+	border:none;
+}
+
+#Header
+{
+	position:relative;
+	/*background-image:url(../images/bg_header.jpg);*/
+	background-color:#cccccc;
+	background-repeat:repeat-x;
+	background-position:top center;
+	height:120px;
+}
+
+#User_bar
+{
+	position:relative;
+	background-image:url(../images/bg_footer.jpg);
+	background-repeat:repeat-x;
+	background-position:top center;	
+	border-bottom:#000 1px solid;	
+	height:auto;
+	min-height:30px;
+	text-align:left;
+	font-size:14px;
+	font-weight:bold;
+	color:#CCCCCC;
+	padding:0 0 0px;
+}
+
+#User_bar #User_bar_content #User_name
+{	
+	position:relative;
+    float:left;
+	top:0px;
+}	
+					
+#User_bar_content #Buttons
+{	
+	position:relative;
+    float:right;
+	height:25px !important;
+}
+
+#Logo
+{
+	position:relative;
+	width:auto;
+	height:auto;
+	float:left;
+	text-align:center;
+	left:83px;
+	top:15px;
+}
+
+#Footer
+{
+	
+	background-image:url(../images/bg_footer.jpg);
+	background-repeat:repeat-x;
+	background-position:top center;	
+	height:auto;
+	min-height:60px;
+	margin:0 auto;
+	/*
+	position:fixed;
+	bottom:0px;
+	*/
+}
+
+#Footer #Footer_content
+{
+	position:relative;
+	margin:0 auto;
+	border-top:10px transparent solid;
+	color:#CCC;
+}	
+#Footer #Footer_content ul
+{
+	position:relative;
+	float:right;
+	color:#666;
+}
+	#Footer #Footer_content ul li
+	{
+		position:relative;	
+		text-decoration:none;
+		list-style:none;
+		float:left;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:12px;
+		font-weight:normal;
+		color:#CCCCCC;
+	}
+		#Footer #Footer_content ul li a
+		{
+			position:relative;
+			text-decoration:none;
+			list-style:none;
+			float:left;
+			font-family:Verdana, Geneva, sans-serif;
+			color:#CCC;
+			font-size:12px;
+			font-weight:normal;
+			color:#CCCCCC;					
+		}
+		
+		#Footer #Footer_content #MenuFooter
+		{
+			text-align:right;
+		}
+		
+#SideBar h3
+{
+	border-bottom:2px solid gray;
+	color:#999;
+}
+		
+ul.sub-menu
+{
+	margin-left:10px;
+	/*display:none; Comentado para exibir os menus abertos!*/
+}
+ul.sub-menu li a
+{
+	position:relative;
+	text-decoration:none;
+}
+ul.sub-menu li a:hover
+{
+	position:relative;
+
+}
+ul.sub-menu li
+{
+	list-style-type:none;
+
+}
+
+
+#SideBar
+{
+	min-height:200px;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	color:#999 !important;
+}

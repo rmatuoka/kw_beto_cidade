@@ -1,0 +1,12 @@
+<% 
+	content_for :title do "Editar Usuário" end
+%>
+<%content_for :head do%>
+	<%=stylesheet_link_tag "cadastro"%>
+	<%= stylesheet_link_tag "admin_user"%>
+<%end%>
+
+<h1>Editar Usuário</h1>
+<br />
+
+<%= render 'form' %>
