@@ -4,7 +4,7 @@
 
 <h1>Buscando por: <%=params[:keyword]%></h1>
 <br />
-
+<%if @Results != nil%>
 <table>
   <tr>
     <th width="200px">Nome</th>
@@ -22,5 +22,8 @@
     </tr>
   <% end %>
 </table>
+<%else%>
+<h2>Não foi digitado nenhum termo na barra de pesquisa</h2>
+<%end%>
 <br><br>
 <%=link_to "Voltar", admin_users_path, :class => "button"%>

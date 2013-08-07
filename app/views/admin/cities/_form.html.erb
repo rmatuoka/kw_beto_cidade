@@ -1,12 +1,15 @@
+    <div id="Box_register_form" class="twelve columns">
+    
 <%= form_for [:admin, @city] do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :population %><br />
-    <%= f.text_field :population %>
-  </p>
-  <p><%= f.submit %></p>
+  <div class="field">
+    <%= f.label :name, "Nome" %><br />
+    <%= f.text_field :name, :placeholder => "Nome" %>
+  </div>
+  <div class="field">
+    <%= f.label :population, "População" %><br />
+    <%= f.text_field :population, :placeholder => "População" %>
+  </div>
+  <p><%= f.submit "Salvar", :class => "button" %></p>
 <% end %>
+</div>

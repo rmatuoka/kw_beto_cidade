@@ -28,7 +28,7 @@ class Admin::CitiesController < ApplicationController
   def update
     @city = City.find(params[:id])
     if @city.update_attributes(params[:city])
-      redirect_to [:admin, @city], :notice  => "Successfully updated city."
+      redirect_to admin_city_path(@city), :notice  => "Successfully updated city."
     else
       render :action => 'edit'
     end

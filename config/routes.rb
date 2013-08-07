@@ -6,7 +6,11 @@ KwBetoCidades::Application.routes.draw do
   resources :atualizar
   #Inicio do namespace Admin
   namespace(:admin){
-    resources :cities
+    resources :cities do
+      collection do
+        get 'search'
+      end
+  end
     resources :static_contents
     resources :users do
       collection do

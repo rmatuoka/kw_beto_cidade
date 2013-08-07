@@ -1,3 +1,6 @@
 class City < ActiveRecord::Base
-  attr_accessible :name, :population
+  scoped_search :on => [:name, :population]
+  
+  validates_presence_of :name, :message => "- preencha o coampo!"
+  
 end

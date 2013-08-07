@@ -7,8 +7,8 @@
 </div>
 
 <div id="search" class="twelve columns">
-  <p>Informe o nome, sobrenome ou e-mail do usuário.</p>
-  <%=form_tag '/admin/users/search', :method => :get, :name=>"formkeyword"%>
+  <p>Informe o nome do município.</p>
+  <%=form_tag '/admin/cities/search', :method => :get, :name=>"formkeyword"%>
     <%=text_field_tag :keyword, nil %>
     <%=submit_tag "Buscar", :class => "button secondary"%>
   </form>
@@ -23,9 +23,9 @@
     <tr>
       <td><%= city.name %></td>
       <td><%= city.population %></td>
-      <td><%= link_to "Show", [:admin, city] %></td>
+      <td><%= link_to "Show", admin_city_path(city) %></td>
       <td><%= link_to "Edit", edit_admin_city_path(city) %></td>
-      <td><%= link_to "Destroy", [:admin, city], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Destroy", admin_city_path(city), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
