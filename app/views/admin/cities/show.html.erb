@@ -1,0 +1,16 @@
+<% title "Admin/City" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @city.name %>
+</p>
+<p>
+  <strong>Population:</strong>
+  <%= @city.population %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_city_path(@city) %> |
+  <%= link_to "Destroy", [:admin, @city], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_cities_path %>
+</p>
