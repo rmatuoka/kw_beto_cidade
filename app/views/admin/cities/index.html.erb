@@ -25,6 +25,7 @@
       <td><%= city.population %></td>
       <td><%= link_to "Show", admin_city_path(city) %></td>
       <td><%= link_to "Edit", edit_admin_city_path(city) %></td>
+      <td><%= link_to "Entidades", admin_city_entities_path(city) %></td>
       <td><%= link_to "Destroy", admin_city_path(city), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>

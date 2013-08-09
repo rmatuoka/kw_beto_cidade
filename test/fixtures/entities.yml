@@ -1,0 +1,53 @@
+one:
+  nome: MyString
+  fundacao: 2013-08-09 14:40:08
+  interligada: MyString
+  endereco: MyString
+  telefone: MyString
+  email: MyString
+  site: MyString
+  cnpj: MyString
+  segmento: MyString
+  presidente: MyString
+  contato: MyString
+  utilpublica: false
+  histrelacionamento: MyText
+  sedepropria: false
+  estrutura: MyText
+  condicloes: MyText
+  temveiculos: false
+  quantveiculos: 1
+  condveiculos: MyText
+  verbaestadual: false
+  verbaorgao: MyText
+  cadastentestaduais: MyText
+  pencadin: false
+  prosocial: false
+  proativoinativo: false
+
+two:
+  nome: MyString
+  fundacao: 2013-08-09 14:40:08
+  interligada: MyString
+  endereco: MyString
+  telefone: MyString
+  email: MyString
+  site: MyString
+  cnpj: MyString
+  segmento: MyString
+  presidente: MyString
+  contato: MyString
+  utilpublica: false
+  histrelacionamento: MyText
+  sedepropria: false
+  estrutura: MyText
+  condicloes: MyText
+  temveiculos: false
+  quantveiculos: 1
+  condveiculos: MyText
+  verbaestadual: false
+  verbaorgao: MyText
+  cadastentestaduais: MyText
+  pencadin: false
+  prosocial: false
+  proativoinativo: false

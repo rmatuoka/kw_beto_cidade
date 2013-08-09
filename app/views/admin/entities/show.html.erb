@@ -1,0 +1,108 @@
+<% title "Admin/Entity" %>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @entity.nome %>
+</p>
+<p>
+  <strong>Fundacao:</strong>
+  <%= @entity.fundacao %>
+</p>
+<p>
+  <strong>Interligada:</strong>
+  <%= @entity.interligada %>
+</p>
+<p>
+  <strong>Endereco:</strong>
+  <%= @entity.endereco %>
+</p>
+<p>
+  <strong>Telefone:</strong>
+  <%= @entity.telefone %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @entity.email %>
+</p>
+<p>
+  <strong>Site:</strong>
+  <%= @entity.site %>
+</p>
+<p>
+  <strong>Cnpj:</strong>
+  <%= @entity.cnpj %>
+</p>
+<p>
+  <strong>Segmento:</strong>
+  <%= @entity.segmento %>
+</p>
+<p>
+  <strong>Presidente:</strong>
+  <%= @entity.presidente %>
+</p>
+<p>
+  <strong>Contato:</strong>
+  <%= @entity.contato %>
+</p>
+<p>
+  <strong>Utilpublica:</strong>
+  <%= @entity.utilpublica %>
+</p>
+<p>
+  <strong>Histrelacionamento:</strong>
+  <%= @entity.histrelacionamento %>
+</p>
+<p>
+  <strong>Sedepropria:</strong>
+  <%= @entity.sedepropria %>
+</p>
+<p>
+  <strong>Estrutura:</strong>
+  <%= @entity.estrutura %>
+</p>
+<p>
+  <strong>Condicloes:</strong>
+  <%= @entity.condicloes %>
+</p>
+<p>
+  <strong>Temveiculos:</strong>
+  <%= @entity.temveiculos %>
+</p>
+<p>
+  <strong>Quantveiculos:</strong>
+  <%= @entity.quantveiculos %>
+</p>
+<p>
+  <strong>Condveiculos:</strong>
+  <%= @entity.condveiculos %>
+</p>
+<p>
+  <strong>Verbaestadual:</strong>
+  <%= @entity.verbaestadual %>
+</p>
+<p>
+  <strong>Verbaorgao:</strong>
+  <%= @entity.verbaorgao %>
+</p>
+<p>
+  <strong>Cadastentestaduais:</strong>
+  <%= @entity.cadastentestaduais %>
+</p>
+<p>
+  <strong>Pencadin:</strong>
+  <%= @entity.pencadin %>
+</p>
+<p>
+  <strong>Prosocial:</strong>
+  <%= @entity.prosocial %>
+</p>
+<p>
+  <strong>Proativoinativo:</strong>
+  <%= @entity.proativoinativo %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_city_entity_path(@entity) %> |
+  <%= link_to "Destroy", admin_city_entity_path(@city), :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_city_entities_path(@city) %>
+</p>

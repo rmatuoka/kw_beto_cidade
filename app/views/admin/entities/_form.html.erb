@@ -1,0 +1,104 @@
+<%= form_for [:admin,@city, @entity] do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :fundacao %><br />
+    <%= f.datetime_select :fundacao %>
+  </p>
+  <p>
+    <%= f.label :interligada %><br />
+    <%= f.text_field :interligada %>
+  </p>
+  <p>
+    <%= f.label :endereco %><br />
+    <%= f.text_field :endereco %>
+  </p>
+  <p>
+    <%= f.label :telefone %><br />
+    <%= f.text_field :telefone %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :site %><br />
+    <%= f.text_field :site %>
+  </p>
+  <p>
+    <%= f.label :cnpj %><br />
+    <%= f.text_field :cnpj %>
+  </p>
+  <p>
+    <%= f.label :segmento %><br />
+    <%= f.text_field :segmento %>
+  </p>
+  <p>
+    <%= f.label :presidente %><br />
+    <%= f.text_field :presidente %>
+  </p>
+  <p>
+    <%= f.label :contato %><br />
+    <%= f.text_field :contato %>
+  </p>
+  <p>
+    <%= f.label :utilpublica %><br />
+    <%= f.check_box :utilpublica %>
+  </p>
+  <p>
+    <%= f.label :histrelacionamento %><br />
+    <%= f.text_area :histrelacionamento %>
+  </p>
+  <p>
+    <%= f.label :sedepropria %><br />
+    <%= f.check_box :sedepropria %>
+  </p>
+  <p>
+    <%= f.label :estrutura %><br />
+    <%= f.text_area :estrutura %>
+  </p>
+  <p>
+    <%= f.label :condicloes %><br />
+    <%= f.text_area :condicloes %>
+  </p>
+  <p>
+    <%= f.label :temveiculos %><br />
+    <%= f.check_box :temveiculos %>
+  </p>
+  <p>
+    <%= f.label :quantveiculos %><br />
+    <%= f.text_field :quantveiculos %>
+  </p>
+  <p>
+    <%= f.label :condveiculos %><br />
+    <%= f.text_area :condveiculos %>
+  </p>
+  <p>
+    <%= f.label :verbaestadual %><br />
+    <%= f.check_box :verbaestadual %>
+  </p>
+  <p>
+    <%= f.label :verbaorgao %><br />
+    <%= f.text_area :verbaorgao %>
+  </p>
+  <p>
+    <%= f.label :cadastentestaduais %><br />
+    <%= f.text_area :cadastentestaduais %>
+  </p>
+  <p>
+    <%= f.label :pencadin %><br />
+    <%= f.check_box :pencadin %>
+  </p>
+  <p>
+    <%= f.label :prosocial %><br />
+    <%= f.check_box :prosocial %>
+  </p>
+  <p>
+    <%= f.label :proativoinativo %><br />
+    <%= f.check_box :proativoinativo %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
