@@ -40,7 +40,7 @@ class Admin::CitiesController < ApplicationController
     redirect_to admin_cities_url, :notice => "Successfully destroyed city."
   end
   
-    def search
+  def search
     if !params[:keyword].blank?
       @Results = City.search_for(params[:keyword]).paginate :page => params[:page],:per_page => 20
     end

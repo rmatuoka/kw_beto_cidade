@@ -2,7 +2,7 @@ class Admin::EntitiesController < ApplicationController
   layout "inadmin"
   before_filter :load_city
   def index
-    @entities = @city.entities.all
+    @entities = @city.entities.all.paginate :page => params[:page], :per_page => 20
   end
 
   def show
@@ -44,4 +44,12 @@ class Admin::EntitiesController < ApplicationController
   def load_city
     @city = City.find(params[:city_id])
   end
+  
+  def search
+    if !params[:keyword].blank?
+      @Results = @city.entities.search_for(params[:keyword]).paginate :page => params[:page],:per_page => 20
+    end
+  end
+  
+  
 end

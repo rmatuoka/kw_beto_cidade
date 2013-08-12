@@ -1,0 +1,28 @@
+<% 
+        content_for :title do "Resultado da Busca por: #{params[:keyword]}" end
+%>
+
+<h1>Buscando por: <%=params[:keyword]%></h1>
+<br />
+<%if @Results != nil%>
+<table>
+  <tr>
+    <th width="200px">Nome</th>
+    <th width="200px">População</th>
+  </tr>
+        <%@Results.each do |entity| %>
+    <tr>
+      <td><%= entity.nome %></td>
+      <td><%= entity.cnpj %></td>
+      <td><%= entity.presidente %></td>
+      <td><%= link_to "Show", admin_city_entity_path(@city,entity) %></td>
+      <td><%= link_to "Edit", edit_admin_city_entity_path(@city,entity) %></td>
+      <td><%= link_to "Destroy", admin_city_entity_path(@city,entity), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+<%else%>
+<h2>Não foi digitado nenhum termo na barra de pesquisa</h2>
+<%end%>
+<br><br>
+<%=link_to "Voltar", admin_cities_path, :class => "button"%>

@@ -7,10 +7,15 @@ KwBetoCidades::Application.routes.draw do
   #Inicio do namespace Admin
   namespace(:admin){
     resources :cities do
-      resources :entities
+      
       collection do
         get 'search'
       end
+    resources :entities do
+      collection do
+        get     'search'
+      end
+  end
   end
     resources :static_contents
     resources :users do

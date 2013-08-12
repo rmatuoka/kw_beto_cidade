@@ -19,6 +19,8 @@
 <%= javascript_include_tag "menuadmin.js" %>
 <%= javascript_include_tag "jquery.tablesorter.min.js" %>
 <%= javascript_include_tag "jquery.foundation.alerts.js" %>
+<%=javascript_include_tag "jquery.validate.min.js"%>
+<%=javascript_include_tag "jquery.meio.mask.js"%>
 
 
 <script>
@@ -66,18 +68,49 @@ jQuery(document).ready(function()
 <div id="Footer" class="twelve columns">
 	<%=render :file => "layouts/_footer.html.erb"%>
 </div>
-<!-- Included JS Files (Compressed) -->
-<script src="javascripts/jquery.js"></script>
-<script src="javascripts/foundation.min.js"></script>
-
-<!-- Initialize JS Plugins -->
-<script src="javascripts/app.js"></script>
-
 
 <script>
 $(window).load(function(){
   $("#featured").orbit();
 });
+</script>
+<script>
+/* Mascaras personalizadas */ 
+$.mask.masks = $.extend($.mask.masks,{
+
+   phone_sp:{ mask: '(99) 99999-9999'}
+
+});
+
+(function($){
+
+   //$(function(){
+
+       //$('input:text').setMask();
+      /* Personalização para celulares de SP*/
+
+       //$('#entity_telefone').keydown(function(event) {
+
+             // Act on the event
+
+           //  if($(this).val().substring(1,6) == '11) 9'){
+
+            //     $(this).attr('alt','phone_sp');
+
+            // }else{
+
+             //    $(this).attr('alt','phone');
+
+           // }
+
+          // $(this).setMask();
+
+       //});
+       $('#entity_cnpj').setMask('cnpj');
+
+   //});
+
+})($);
 </script>
 </body>
 </html>

@@ -1,6 +1,9 @@
-<% title "Admin/Entities" %>
-
-<table>
+<% content_for :title do "Entidades" end %>
+<h1>Entidades</h1>
+<div id="name" class="twelve columns">
+  <p><%= link_to "Nova Entidade", new_admin_city_entity_path(@city), :class => "button", :style => "float:right;"  %></p>
+</div>
+<table class="twelve columns">
   <tr>
     <th>Nome da entidade</th>
     <th>Data de Fundação</th>
@@ -61,5 +64,4 @@
     </tr>
   <% end %>
 </table>
-
-<p><%= link_to "New Admin/Entity", new_admin_city_entity_path(@city) %></p>
+<%= will_paginate @entities %>
