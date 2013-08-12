@@ -1,11 +1,15 @@
+<style>
+#entity_fundacao_3i{
+}
+</style>
 <%= form_for [:admin,@city, @entity] do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :nome, "Nome da entidade" %><br />
     <%= f.text_field :nome, :placeholder => "Nome da entidade" %>
   </p>
-  <p>
-    <%= f.label :fundacao, "Data de Fundação" %><br />
+  <p class="two columns">
+    <%= f.label :fundacao %><br />
     <%= f.datetime_select :fundacao %>
   </p>
   <p>
