@@ -1,9 +1,7 @@
-<style>
-#entity_fundacao_3i{
-}
-</style>
+<div id="Box_register_form" class="twelve columns">
 <%= form_for [:admin,@city, @entity] do |f| %>
   <%= f.error_messages %>
+  <p><%= f.submit "Salvar", :class => "button" %></p>
   <p>
     <%= f.label :nome, "Nome da entidade" %><br />
     <%= f.text_field :nome, :placeholder => "Nome da entidade" %>
@@ -104,5 +102,16 @@
     <%= f.label :proativoinativo, "(Ativo/Inativo)" %><br />
     <%= f.check_box :proativoinativo %>
   </p>
-  <p><%= f.submit %></p>
+  <p><%= f.submit "Salvar", :class => "button" %></p>
 <% end %>
+<script type="text/javascript">
+  $(document).ready(function() {
+   var submit_text = $("#entity_nome").val();
+    $(":submit").prop( "value", "Salvar " + submit_text);
+   });
+    var submit_text = $("#entity_nome").val();
+    $("#entity_nomee").keyup(function(){
+      $(":submit").prop( "value", "Salvar " + $(this).val());
+    });
+  </script>
+  </div>

@@ -3,6 +3,7 @@
 <%= form_for [:admin, @city] do |f| %>
   <%= f.error_messages %>
   <div class="field">
+  <p><%= f.submit "Salvar", :class => "button" %></p>
     <%= f.label :name, "Nome" %><br />
     <%= f.text_field :name, :placeholder => "Nome" %>
   </div>
@@ -116,4 +117,14 @@
   </div>
   <p><%= f.submit "Salvar", :class => "button" %></p>
 <% end %>
+<script type="text/javascript">
+  $(document).ready(function() {
+   var submit_text = $("#city_name").val();
+    $(":submit").prop( "value", "Salvar " + submit_text);
+   });
+    var submit_text = $("#city_name").val();
+    $("#city_name").keyup(function(){
+      $(":submit").prop( "value", "Salvar " + $(this).val());
+    });
+  </script>
 </div>

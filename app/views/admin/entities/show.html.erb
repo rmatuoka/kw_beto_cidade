@@ -102,7 +102,7 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_admin_city_entity_path(@entity) %> |
-  <%= link_to "Destroy", admin_city_entity_path(@city), :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", admin_city_entities_path(@city) %>
+  <%= link_to "Editar", edit_admin_city_entity_path(@city, @entity), :class => "small button secondary" %> |
+  <%= link_to "Deletar", admin_city_entity_path(@city, @entity), :class => "small button secondary", :confirm => 'Tem certeza?', :method => :delete %> |
+  <%= link_to "Ver Todas", admin_city_entities_path(@city), :class => "small button secondary" %>
 </p>

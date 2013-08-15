@@ -5,63 +5,29 @@
 </div>
 <table class="twelve columns">
   <tr>
-    <th>Nome da entidade</th>
-    <th>Data de Fundação</th>
-    <th>Interligada a algum segmento/entidade</th>
-    <th>Endereco</th>
+    <th>Nome</th>
     <th>Telefones</th>
     <th>E-mail</th>
-    <th>Site</th>
     <th>CNPJ</th>
     <th>Segmento</th>
     <th>Presidente/ Mantenedor</th>
-    <th>Contato</th>
-    <th>Titularidade de Utilidade Pública Estadual?</th>
-    <th>Histórico de Relacionamento</th>
-    <!--<th>Sedepropria</th>
-    <th>Estrutura</th>
-    <th>Condicloes</th>
-    <th>Temveiculos</th>
-    <th>Quantveiculos</th>
-    <th>Condveiculos</th>
-    <th>Verbaestadual</th>
-    <th>Verbaorgao</th>
-    <th>Cadastentestaduais</th>
-    <th>Pencadin</th>
-    <th>Prosocial</th>
-    <th>Proativoinativo</th>-->
+    
   </tr>
   <% for entity in @entities %>
     <tr>
       <td><%= entity.nome %></td>
-      <td><%= entity.fundacao %></td>
-      <td><%= entity.interligada %></td>
-      <td><%= entity.endereco %></td>
       <td><%= entity.telefone %></td>
       <td><%= entity.email %></td>
-      <td><%= entity.site %></td>
       <td><%= entity.cnpj %></td>
       <td><%= entity.segmento %></td>
       <td><%= entity.presidente %></td>
-      <td><%= entity.contato %></td>
-      <td><%= entity.utilpublica %></td>
-      <td><%= entity.histrelacionamento %></td>
-      <!--<td><%= entity.sedepropria %></td>
-      <td><%= entity.estrutura %></td>
-      <td><%= entity.condicloes %></td>
-      <td><%= entity.temveiculos %></td>
-      <td><%= entity.quantveiculos %></td>
-      <td><%= entity.condveiculos %></td>
-      <td><%= entity.verbaestadual %></td>
-      <td><%= entity.verbaorgao %></td>
-      <td><%= entity.cadastentestaduais %></td>
-      <td><%= entity.pencadin %></td>
-      <td><%= entity.prosocial %></td>
-      <td><%= entity.proativoinativo %></td>-->
-      <td><%= link_to "Show", admin_city_entity_path(@city,entity) %></td>
-      <td><%= link_to "Edit", edit_admin_city_entity_path(@city,entity) %></td>
-      <td><%= link_to "Destroy", admin_city_entity_path(@city,entity), :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Visualizar", admin_city_entity_path(@city,entity), :class => "small button secondary" %></td>
+      <td><%= link_to "Editar", edit_admin_city_entity_path(@city,entity), :class => "small button secondary" %></td>
+      <td><%= link_to "Deletar", admin_city_entity_path(@city,entity), :class => "small button secondary", :confirm => 'Tem certeza?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
+<div>
+  <%= link_to "Voltar", admin_cities_path, :class => "small button secondary"%></td>
+</div><br/>
 <%= will_paginate @entities %>

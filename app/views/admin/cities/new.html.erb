@@ -1,5 +1,7 @@
-<% title "New Admin/City" %>
-
+<% 
+        content_for :title do "Criar Município" end
+%>
+<h1>Criar Município</h1>
 <%= render 'form' %>
 
-<p><%= link_to "Back to List", admin_cities_path %></p>
+<p><%= link_to "Voltar a lista", admin_cities_path, :class => "small button secondary" %></p>

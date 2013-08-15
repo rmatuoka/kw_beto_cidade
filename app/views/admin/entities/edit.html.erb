@@ -1,8 +1,10 @@
-<% title "Edit Admin/Entity" %>
-
+<% 
+        content_for :title do "Editar Entidade " + @entity.nome end
+%>
+<h1>Editar Entidade <%= @entity.nome%></h1>
 <%= render 'form' %>
 
 <p>
-  <%= link_to "Show", admin_city_entity_path(@city) %> |
-  <%= link_to "View All", admin_city_entities_path(@city) %>
+  <%= link_to "Visualizar", admin_city_entity_path(@city, @entity), :class => "small button secondary" %> |
+  <%= link_to "Ver Todas", admin_city_entities_path, :class => "small button secondary" %>
 </p>

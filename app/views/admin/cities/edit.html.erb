@@ -1,15 +1,15 @@
 <% 
-        content_for :title do "Editar Município" end
+        content_for :title do "Editar Município de " + @city.name end
 %>
 
 <%content_for :head do%>
         <%=stylesheet_link_tag "cadastro"%>
         <%= stylesheet_link_tag "admin_user"%>
 <%end%>
-
+<h1>Editar Município de <%= @city.name%></h1>
 <%= render 'form' %>
 
 <p>
-  <%= link_to "Show", [:admin, @city] %> |
-  <%= link_to "View All", admin_cities_path %>
+  <%= link_to "Visualizar", [:admin, @city], :class => "small button secondary" %> |
+  <%= link_to "Ver Todas", admin_cities_path, :class => "small button secondary" %>
 </p>

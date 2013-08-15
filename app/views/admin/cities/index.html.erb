@@ -17,16 +17,23 @@
 <table class="twelve columns">
   <tr>
     <th>Nome</th>
+    <th>Prefeito</th>
+    <th>Vice-Prefeito</th>
     <th>População</th>
+    <th>Nº de Eleitores</th>
+    
   </tr>
   <% for city in @cities %>
     <tr>
       <td><%= city.name %></td>
+      <td><%= city.prefeito %></td>
+      <td><%= city.viceprefeito %></td>
       <td><%= city.population %></td>
-      <td><%= link_to "Show", admin_city_path(city) %></td>
-      <td><%= link_to "Edit", edit_admin_city_path(city) %></td>
-      <td><%= link_to "Entidades", admin_city_entities_path(city) %></td>
-      <td><%= link_to "Destroy", admin_city_path(city), :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= city.eleitores %></td>
+      <td><%= link_to "Visualizar", admin_city_path(city), :class => "small button secondary" %></td>
+      <td><%= link_to "Editar", edit_admin_city_path(city), :class => "small button secondary" %></td>
+      <td><%= link_to "Entidades", admin_city_entities_path(city), :class => "small button secondary" %></td>
+      <td><%= link_to "Deletar", admin_city_path(city), :class => "small button secondary", :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
