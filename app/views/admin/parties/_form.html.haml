@@ -1,0 +1,12 @@
+= form_for [:admin, @party] do |f|
+  .twelve.columns.alert-box.alert
+    = f.error_messages
+  = f.hidden_field :user_id, :value => current_user.id
+  %p
+    = f.label :name, "Nome"
+    = f.text_field :name
+  %p
+    = f.label :abreviation, "Sigla"
+    = f.text_field :abreviation
+  %p
+    = f.submit "Salvar", :class => "button"

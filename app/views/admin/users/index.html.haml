@@ -1,0 +1,32 @@
+- content_for :title do "Usuários" end
+%h1 Usuários
+%br/
+#name.twelve.columns
+  = link_to "Novo usuário", new_admin_user_path, :class => "button", :style => "float:right;"
+#search.twelve.columns
+  %p Informe o nome, sobrenome ou e-mail do usuário.
+  = form_tag '/admin/users/search', :method => :get, :name=>"formkeyword"
+  = text_field_tag :keyword, nil
+  = submit_tag "Buscar", :class => "button secondary"
+
+%table.twelve.columns
+  %tr
+    %th Nome
+    %th Sobrenome
+    %th Email
+    %th Permissão
+    %th Ações
+  - for user in @users
+    %tr
+      %td= user.name
+      %td= user.last_name
+      %td= user.email
+      %td= user.role
+      %td
+        = link_to "Show", admin_user_path(user), :class => "small secondary button"
+        = link_to "Edit", edit_admin_user_path(user), :class => "small secondary button"
+        = link_to "Destroy", admin_user_path(user), :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
+
+= will_paginate @users
+:javascript
+  document.getElementById('keyword').focus();

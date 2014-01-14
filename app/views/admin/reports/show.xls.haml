@@ -1,0 +1,26 @@
+- title "Relatório - Entidades - #{@report.name}"
+%h1 
+  = "Relatório - Entidades - #{@report.name}"
+%br/
+
+%table.twelve.columns
+  %tr
+    %th Entidade
+    %th Escolaridade
+    %th Partido
+    %th Cidade
+    %th Grupos
+  - for result in @results
+    %tr
+      %td= result.name
+      %td= result.schooling.name
+      %td= result.party.name
+      %td= result.city.name
+      %td
+        - result.groups.all.each do |g|
+          = g.name
+      
+%p
+  = link_to "xls", admin_report_path(@report) + ".xls", :class => "small secondary button"
+  = link_to "pdf", new_admin_being_path, :class => "small secondary button"
+  = link_to "e-mail", new_admin_being_path, :class => "small secondary button"

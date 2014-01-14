@@ -1,0 +1,12 @@
+%table.twelve.columns
+  %tr
+    %th Usuário
+    %th Permissão
+    %th Último acesso
+    %th Total de Registros
+  - for user in @reports
+    %tr
+      %td= "#{user.name} #{user.last_name}"
+      %td= user.role
+      %td= user.last_login_at
+      %td= user.beings.count

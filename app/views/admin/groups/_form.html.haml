@@ -1,0 +1,9 @@
+= form_for [:admin, @group] do |f|
+  .twelve.columns.alert-box.alert
+    = f.error_messages
+  = f.hidden_field :user_id, :value => current_user.id
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.submit "Salvar", :class => "button"

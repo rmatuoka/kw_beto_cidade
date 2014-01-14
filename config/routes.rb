@@ -1,21 +1,34 @@
 KwBetoCidades::Application.routes.draw do
-
   resources :user_sessions
   resources :users
   resources :password_resets
   resources :atualizar
+  
   #Inicio do namespace Admin
   namespace(:admin){
+    resources :beings
+    resources :schoolings
+    resources :parties
+    resources :being_types
+    resources :groups
+    resources :logs
+    
+    resources :reports do
+      collection do
+        get 'register_by_user'
+      end
+    end
+    
     resources :cities do
-      
       collection do
         get 'search'
       end
+      
     resources :entities do
       collection do
         get     'search'
       end
-  end
+    end
   end
     resources :static_contents
     resources :users do

@@ -1,0 +1,83 @@
+#Box_register_form.twelve.columns
+  = form_for [:admin,@city, @entity] do |f|
+    .twelve.columns.alert-box.alert
+      = f.error_messages
+    
+    %p
+      = f.label :nome, "Nome da entidade"
+      = f.text_field :nome, :placeholder => "Nome da entidade"
+    %p
+      = f.label :fundacao
+      = f.datetime_select :fundacao
+    %p
+      = f.label :interligada, "Interligada a algum segmento/entidade"
+      = f.text_field :interligada, :placeholder => "Interligada a algum segmento/entidade"
+    %p
+      = f.label :endereco, "Endereço"
+      = f.text_field :endereco, :placeholder => "Endereço"
+    %p
+      = f.label :telefone, "Telefones"
+      = f.text_field :telefone, :placeholder => "Telefones"
+    %p
+      = f.label :email, "E-mail"
+      = f.text_field :email, :placeholder => "E-mail"
+    %p
+      = f.label :site, "Site"
+      = f.text_field :site, :placeholder => "Site"
+    %p
+      = f.label :cnpj, "CNPJ"
+      = f.text_field :cnpj, :placeholder => "CNPJ"
+    %p
+      = f.label :segmento, "Segmento"
+      = f.text_field :segmento, :placeholder => "Segmento"
+    %p
+      = f.label :presidente, "Presidente/ Mantenedor"
+      = f.text_field :presidente, :placeholder => "Presidente/ Mantenedor"
+    %p
+      = f.label :contato, "Contato"
+      = f.text_field :contato, :placeholder => "Contato"
+    %p
+      = f.label :utilpublica, "Titularidade de Utilidade Pública Estadual?"
+      = f.check_box :utilpublica
+    %p
+      = f.label :histrelacionamento, "Histórico de Relacionamento"
+      = f.text_area :histrelacionamento, :placeholder => "Histórico de Relacionamento"
+    %p
+      = f.label :sedepropria, "a) Sede própria"
+      = f.check_box :sedepropria
+    %p
+      = f.label :estrutura, "a.1) Qual a estrutura?"
+      = f.text_area :estrutura, :placeholder => "a.1) Qual a estrutura?"
+    %p
+      = f.label :condicloes, "a.2) Condições"
+      = f.text_area :condicloes, :placeholder => "a.2) Condições"
+    %p
+      = f.label :temveiculos, "b) Tem veículos"
+      = f.check_box :temveiculos
+    %p
+      = f.label :quantveiculos, "b.1) quantos?"
+      = f.text_field :quantveiculos, :placeholder => "b.1) quantos?"
+    %p
+      = f.label :condveiculos, "b.2) condições?"
+      = f.text_area :condveiculos, :placeholder => "b.2) condições?"
+    %p
+      = f.label :verbaestadual, "Recebe verba estadual?"
+      = f.check_box :verbaestadual
+    %p
+      = f.label :verbaorgao, "De qual órgão"
+      = f.text_area :verbaorgao, :placeholder => "De qual órgão"
+    %p
+      = f.label :cadastentestaduais, "Tem cadastro de entidades estaduais"
+      = f.text_area :cadastentestaduais, :placeholder => "Tem cadastro de entidades estaduais"
+    %p
+      = f.label :pencadin, "Pendência no CADIN?"
+      = f.check_box :pencadin
+    %p
+      = f.label :prosocial, "Tem pró-social?"
+      = f.check_box :prosocial
+    %p
+      = f.label :proativoinativo, "(Ativo/Inativo)"
+      = f.check_box :proativoinativo
+    %p
+      = f.submit "Salvar", :class => "button"
+  

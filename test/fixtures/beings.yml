@@ -1,0 +1,13 @@
+one:
+  name: MyString
+  date_of_birth: 2013-10-02
+  schooling_id: 1
+  city_id: 1
+  party_id: 1
+
+two:
+  name: MyString
+  date_of_birth: 2013-10-02
+  schooling_id: 1
+  city_id: 1
+  party_id: 1

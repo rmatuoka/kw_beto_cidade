@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  being_types_ids: MyString
+  date_of_birth_start: 2013-10-08
+  date_of_birth_end: 2013-10-08
+  schooling_ids: MyString
+  city_ids: MyString
+  party_ids: MyString
+  group_ids: MyString
+  date_start: 2013-10-08
+  date_end: 2013-10-08
+
+two:
+  user_id: 1
+  being_types_ids: MyString
+  date_of_birth_start: 2013-10-08
+  date_of_birth_end: 2013-10-08
+  schooling_ids: MyString
+  city_ids: MyString
+  party_ids: MyString
+  group_ids: MyString
+  date_start: 2013-10-08
+  date_end: 2013-10-08

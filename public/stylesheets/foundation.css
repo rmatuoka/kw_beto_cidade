@@ -162,7 +162,7 @@ input[type="text"][disabled], input[type="password"][disabled], input[type="date
 
 textarea { height: auto; }
 
-select { width: 100%; }
+/*select { width: 100%; }*/
 
 /* Fieldsets */
 fieldset { border: solid 1px #dddddd; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; padding: 12px; margin: 18px 0; }

@@ -1,8 +1,13 @@
 class Admin::EntitiesController < ApplicationController
+  access_control do
+      allow :admin, :acessor, :deputado, :all
+  end
+  
   layout "inadmin"
+  
   before_filter :load_city
   def index
-    @entities = @city.entities.all.paginate :page => params[:page], :per_page => 20
+    @entities = @city.entities.all_active.paginate :page => params[:page], :per_page => 20
   end
 
   def show
@@ -37,7 +42,7 @@ class Admin::EntitiesController < ApplicationController
 
   def destroy
     @entity = @city.entities.find(params[:id])
-    @entity.destroy
+    @entity.newdestroy
     redirect_to admin_city_entities_path(@city), :notice => "Successfully destroyed entity."
   end
   

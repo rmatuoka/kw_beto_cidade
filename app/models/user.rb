@@ -11,6 +11,12 @@ class User < ActiveRecord::Base
   validates_presence_of :last_name, :message=> " - preencha o campo!"
   validates_presence_of :email, :message=> " - preencha o campo!"
   
+  has_many :groups
+  has_many :beings
+  has_many :cities
+  has_many :parties
+  has_many :reports
+  
   attr_writer :role
   after_save :define_role
 
@@ -18,10 +24,10 @@ class User < ActiveRecord::Base
     @role
     if self.has_role? :admin
       @role = :admin
-    elsif self.has_role? :supervisor
-      @role = :supervisor
-    elsif self.has_role? :user
-      @role = :user
+    elsif self.has_role? :deputado
+      @role = :deputado
+    elsif self.has_role? :acessor
+      @role = :acessor
     end
   end
 

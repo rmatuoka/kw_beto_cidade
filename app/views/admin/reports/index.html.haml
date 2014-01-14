@@ -1,0 +1,22 @@
+- title "Relatórios"
+%h1 Relatórios
+%br/
+
+%p= link_to "+ Relatório", new_admin_report_path, :class => "button"
+
+%table.twelve.columns
+  %tr
+    %th Nome
+    %th Tipos de Entidade
+    %th Criado por
+    %th Ações
+  - for report in @reports
+    %tr
+      %td= report.name
+      %td= report.being_types_ids
+      %td= report.user.name
+      %td
+        = link_to 'Show', [:admin, report], :class => "small secondary button"
+        = link_to 'Destroy', [:admin, report], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
+
+%p= link_to "+ Relatório", new_admin_report_path, :class => "button"

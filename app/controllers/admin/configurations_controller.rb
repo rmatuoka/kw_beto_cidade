@@ -1,4 +1,8 @@
 class Admin::ConfigurationsController < ApplicationController
+  access_control do
+      allow :admin, :acessor, :deputado, :all
+  end
+  
   layout "inadmin"
   
   def index

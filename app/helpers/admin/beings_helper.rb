@@ -1,0 +1,2 @@
+module Admin::BeingsHelper
+end

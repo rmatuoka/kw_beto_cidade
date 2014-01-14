@@ -1,0 +1,41 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title= content_for?(:title) ? "CRM Beto Tricoli - " + yield(:title) : "CRM Beto Tricoli"
+    / Set the viewport width to device width for mobile
+    %meta{:content => "width=device-width", :name => "viewport"}/
+    %title= content_for?(:title) ? "CRM Beto Tricoli - " + yield(:title) : "CRM Beto Tricoli"
+    = stylesheet_link_tag "admin"
+    = stylesheet_link_tag "foundation"
+    = stylesheet_link_tag "app"
+    = javascript_include_tag :defaults
+    = javascript_include_tag "modernizr.foundation"
+    = javascript_include_tag "menuadmin.js"
+    = javascript_include_tag "jquery.foundation.alerts.js"
+    :javascript
+      jQuery(document).ready(function() 
+          { 
+      	//	jQuery("li:first.parent > a").trigger('click');
+      		$(document).foundationAlerts();
+              //jQuery("table").tablesorter(); 
+          } 
+      );
+    = yield :head
+  %body
+    = render :file => "layouts/_header.html.erb"
+    #Content
+      #MainBar.nine.columns
+        #Content.twelve.columns
+          = yield
+    #Footer.twelve.columns
+      = render :file => "layouts/_footer.html.erb"
+    / Included JS Files (Compressed)
+    %script{:src => "javascripts/jquery.js"}
+    %script{:src => "javascripts/foundation.min.js"}
+    / Initialize JS Plugins
+    %script{:src => "javascripts/app.js"}
+    :javascript
+      $(window).load(function(){
+        $("#featured").orbit();
+      });

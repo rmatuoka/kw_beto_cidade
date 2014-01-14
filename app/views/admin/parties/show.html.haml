@@ -1,0 +1,12 @@
+- title "#{@party.name}"
+%h1
+  = "#{@party.name}"
+
+%p
+  %strong Abreviation:
+  = @party.abreviation
+
+%p
+  = link_to "Edit", edit_admin_party_path(@party), :class => "small secondary button"
+  = link_to "Destroy", [:admin, @party], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
+  = link_to "View All", admin_parties_path, :class => "small secondary button"

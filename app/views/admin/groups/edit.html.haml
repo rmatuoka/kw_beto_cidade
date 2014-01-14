@@ -1,0 +1,10 @@
+- title "Editar #{@group.name}"
+%h1
+  = "Editar #{@group.name}"
+%br/
+
+= render 'form'
+
+%p
+  = link_to "Show", [:admin, @group], :class => "small secondary button"
+  = link_to "View All", admin_groups_path, :class => "small secondary button"

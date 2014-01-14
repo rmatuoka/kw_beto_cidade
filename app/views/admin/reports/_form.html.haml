@@ -1,0 +1,50 @@
+= form_for [:admin, @report] do |f|
+  .twelve.columns.alert-box.alert
+    = f.error_messages
+    = f.hidden_field :user_id, :value => current_user.id
+  
+  %h2 
+  %p
+    Exibir dados cadastrados de: 
+    = f.date_select :date_start
+ 
+    até:
+    = f.date_select :date_end
+  
+  
+  %h2 entidades do tipo:
+  %p
+    - BeingType.all_active.each do |bt|
+      = check_box_tag 'report[being_types_ids][]', bt.id
+      = bt.name
+            
+  %h2 com a escolaridade:
+  %p
+    - Schooling.all_active.each do |s|
+      = check_box_tag 'report[schooling_ids][]', s.id
+      = s.name
+
+  %h2 das cidades:
+  %p
+    - City.all_active.each do |c|
+      = check_box_tag 'report[city_ids][]', c.id
+      = c.name
+      
+  %h2 que pertençam aos partidos:
+  %p
+    - Party.all_active.each do |p|
+      = check_box_tag 'report[party_ids][]', p.id
+      = p.name
+
+  %h2 e que façam parte dos grupos:
+  %p
+    - Group.all_active.each do |g|
+      = check_box_tag 'report[group_ids][]', g.id
+      = g.name
+  
+  %h2 de um nome a este relatório
+  %p 
+    = f.text_field :name
+    
+  %p
+    = f.submit "Salvar", :class => "button"

@@ -10,7 +10,55 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130809174047) do
+ActiveRecord::Schema.define(:version => 20140113171049) do
+
+  create_table "being_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "active",     :default => true
+  end
+
+  create_table "beings", :force => true do |t|
+    t.string   "name"
+    t.date     "date_of_birth"
+    t.integer  "schooling_id"
+    t.integer  "city_id"
+    t.integer  "party_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "being_type_id"
+    t.integer  "user_id"
+    t.boolean  "active",               :default => true
+    t.string   "mother"
+    t.string   "cpf"
+    t.string   "rg"
+    t.string   "religion"
+    t.string   "address"
+    t.integer  "number"
+    t.string   "phone"
+    t.string   "cellphone"
+    t.string   "emp_nome_empresa"
+    t.string   "emp_cargo"
+    t.string   "emp_potencia_votos"
+    t.string   "emp_tipo_empresa"
+    t.string   "pre_numero_votos"
+    t.string   "ver_numero_votos"
+    t.string   "sec_potencia_votos"
+    t.string   "sec_primeira_divisao"
+    t.string   "sec_segunda_divisao"
+    t.string   "dir_potencia_votos"
+    t.string   "dir_primeira_divisao"
+    t.string   "dir_segunda_divisao"
+    t.string   "grau_relacionamento"
+  end
+
+  create_table "beings_groups", :force => true do |t|
+    t.integer  "being_id"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -43,6 +91,8 @@ ActiveRecord::Schema.define(:version => 20130809174047) do
     t.text     "estrutturismo"
     t.text     "estrutcamara"
     t.text     "estrutbemanimal"
+    t.integer  "user_id"
+    t.boolean  "active",             :default => true
   end
 
   create_table "configurations", :force => true do |t|
@@ -80,6 +130,40 @@ ActiveRecord::Schema.define(:version => 20130809174047) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "city_id"
+    t.boolean  "active",             :default => true
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.boolean  "active",     :default => true
+  end
+
+  create_table "parties", :force => true do |t|
+    t.string   "name"
+    t.string   "abreviation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.boolean  "active",      :default => true
+  end
+
+  create_table "reports", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "being_types_ids"
+    t.date     "date_of_birth_start"
+    t.date     "date_of_birth_end"
+    t.string   "schooling_ids"
+    t.string   "city_ids"
+    t.string   "party_ids"
+    t.string   "group_ids"
+    t.date     "date_start"
+    t.date     "date_end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "roles", :force => true do |t|
@@ -95,6 +179,13 @@ ActiveRecord::Schema.define(:version => 20130809174047) do
     t.integer  "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "schoolings", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "active",     :default => true
   end
 
   create_table "user_sessions", :force => true do |t|

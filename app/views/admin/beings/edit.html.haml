@@ -1,0 +1,10 @@
+- title "Edit Admin/Being"
+%h1
+  = "Editar #{@being.name}"
+%br/
+
+= render 'form'
+
+%p
+  = link_to "Show", [:admin, @being], :class => "small secondary button"
+  = link_to "View All", admin_beings_path, :class => "small secondary button"

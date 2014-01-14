@@ -1,0 +1,9 @@
+- title "Editar #{@schooling.name}"
+%h1
+  = "Editar #{@schooling.name}"
+  
+= render 'form'
+
+%p
+  = link_to "Show", [:admin, @schooling], :class => "small secondary button"
+  = link_to "View All", admin_schoolings_path, :class => "small secondary button"

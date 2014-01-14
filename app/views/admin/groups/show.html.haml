@@ -1,0 +1,12 @@
+- title "#{@group.name}"
+%h1
+  = "#{@group.name}"
+  
+%p
+  %strong Name:
+  = @group.name
+
+%p
+  = link_to "Edit", edit_admin_group_path(@group), :class => "small secondary button"
+  = link_to "Destroy", [:admin, @group], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
+  = link_to "View All", admin_groups_path, :class => "small secondary button"

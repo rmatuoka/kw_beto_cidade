@@ -1,0 +1,16 @@
+- title "Tipos de Entidade"
+%h1 Tipos de Entidade
+%br/
+
+%table.twelve.columns
+  %tr
+    %th Nome
+  - for being_type in @being_types
+    %tr
+      %td= being_type.name
+      %td
+        = link_to "Show", [:admin, being_type], :class => "small secondary button"
+        = link_to "Edit", edit_admin_being_type_path(being_type), :class => "small secondary button"
+        = link_to "Destroy", [:admin, being_type], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
+
+%p= link_to "+ Tipo de Entidade", new_admin_being_type_path, :class => "button"

@@ -1,0 +1,10 @@
+- title "Admin/Schooling"
+
+%p
+  %strong Name:
+  = @schooling.name
+
+%p
+  = link_to "Edit", edit_admin_schooling_path(@schooling),:class => "small button secondary"
+  = link_to "Destroy", [:admin, @schooling], :confirm => 'Are you sure?', :method => :delete,:class => "small button secondary"
+  = link_to "View All", admin_schoolings_path,:class => "small button secondary"

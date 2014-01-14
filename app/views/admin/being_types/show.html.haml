@@ -1,0 +1,11 @@
+- title "#{@being_type.name}"
+%h1="#{@being_type.name}"
+%br/
+
+%p
+  %strong Name:
+  = @being_type.name
+%p
+  = link_to "Edit", edit_admin_being_type_path(@being_type), :class => "small secondary button"
+  =link_to "Destroy", [:admin, @being_type], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
+  =link_to "View All", admin_being_types_path, :class => "small secondary button"

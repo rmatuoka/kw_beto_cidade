@@ -1,0 +1,27 @@
+- title "Admin/Beings"
+%h1 Entidades
+%br/
+
+%p= link_to "+ Entidade", new_admin_being_path, :class => "button"
+
+%table.twelve.columns
+  %tr
+    %th Nome
+    %th Tipo
+    %th Cidade
+    %th Partido
+    %th Criado por
+    %th Ações
+  - for being in @beings
+    %tr
+      %td= being.name
+      %td= being.being_type.name
+      %td= being.city.name
+      %td= being.party.name
+      %td= being.user.name
+      %td
+        = link_to 'Show', [:admin, being], :class => "small secondary button"
+        = link_to 'Edit', edit_admin_being_path(being), :class => "small secondary button"
+        = link_to 'Destroy', [:admin, being], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
+
+%p= link_to "+ Entidade", new_admin_being_path, :class => "button"

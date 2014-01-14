@@ -1,4 +1,8 @@
 class Admin::UsersController < ApplicationController
+  access_control do
+      allow :admin, :acessor, :deputado, :all
+  end
+  
   layout "inadmin"
   
   def index
@@ -15,9 +19,10 @@ class Admin::UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    @user.role = "user"    
-    if !@user.save
-      @user.errors
+    if @user.save
+      redirect_to admin_users_path, :notice => "Usuário criado com sucesso."
+    else
+      render :action => 'new'
     end
   end
   

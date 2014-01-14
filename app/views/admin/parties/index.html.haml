@@ -1,0 +1,21 @@
+- title "Partidos"
+%h1
+  = "Partidos"
+
+%table.twelve.columns
+  %tr
+    %th Nome
+    %th Sigla
+    %th Criado por
+    %th Ações
+  - for party in @parties
+    %tr
+      %td= party.name
+      %td= party.abreviation
+      %td= party.user.name
+      %td
+        = link_to 'Show', [:admin, party], :class => "small secondary button"
+        = link_to 'Edit', edit_admin_party_path(party), :class => "small secondary button"
+        = link_to 'Destroy', [:admin, party], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
+
+%p= link_to "+ Partido", new_admin_party_path, :class => "button"

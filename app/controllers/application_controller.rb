@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
       redirect_to atualizar_index_path
     end 
   end
-     
+
   private
   
   def current_user_session

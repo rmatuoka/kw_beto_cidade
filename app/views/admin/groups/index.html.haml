@@ -1,0 +1,18 @@
+- title "Grupos"
+%h1 Grupos
+%br/
+
+%table.twelve.columns
+  %tr
+    %th Nome
+    %th Criado por
+  - for group in @groups
+    %tr
+      %td= group.name
+      %td= group.user.name
+      %td
+        = link_to 'Show', [:admin, group], :class => "small secondary button"
+        = link_to 'Edit', edit_admin_group_path(group), :class => "small secondary button"
+        = link_to 'Destroy', [:admin, group], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
+
+%p= link_to "+ Grupo", new_admin_group_path, :class => "button"

@@ -1,0 +1,21 @@
+- title "Relatório - Registros por Usuário"
+%h1 Relatório - Registros por Usuário
+%br/
+
+%table.twelve.columns
+  %tr
+    %th Usuário
+    %th Permissão
+    %th Último acesso
+    %th Total de Registros
+  - for user in @reports
+    %tr
+      %td= "#{user.name} #{user.last_name}"
+      %td= user.role
+      %td= user.last_login_at
+      %td= user.beings.count
+      
+%p
+  = link_to "xls", register_by_user_admin_reports_path + ".xls", :class => "small secondary button"
+  = link_to "pdf", new_admin_being_path, :class => "small secondary button"
+  = link_to "e-mail", new_admin_being_path, :class => "small secondary button"

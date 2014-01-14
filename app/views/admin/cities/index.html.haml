@@ -1,0 +1,30 @@
+- content_for :title do "Municípios" end
+%h1 Municípios
+%br/
+#name.twelve.columns
+  %p= link_to "Novo Município", new_admin_city_path, :class => "button", :style => "float:right;"
+#search.twelve.columns
+  %p Informe o nome do município.
+  = form_tag '/admin/cities/search', :method => :get, :name=>"formkeyword"
+  = text_field_tag :keyword, nil
+  = submit_tag "Buscar", :class => "button secondary"
+%table.twelve.columns
+  %tr
+    %th Nome
+    %th Prefeito
+    %th Criado por
+    %th Ações
+  - for city in @cities
+    %tr
+      %td= city.name
+      %td= city.prefeito
+      %td= city.user.name
+      %td
+        = link_to "Visualizar", admin_city_path(city), :class => "small button secondary"
+        = link_to "Editar", edit_admin_city_path(city), :class => "small button secondary"
+        =# link_to "Entidades", admin_city_entities_path(city), :class => "small button secondary"
+        = link_to "Deletar", admin_city_path(city), :class => "small button secondary", :confirm => 'Are you sure?', :method => :delete
+
+= will_paginate @cities
+:javascript
+  document.getElementById('keyword').focus();

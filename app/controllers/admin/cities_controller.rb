@@ -1,7 +1,11 @@
 class Admin::CitiesController < ApplicationController
+  access_control do
+      allow :admin, :acessor, :deputado, :all
+  end
+  
   layout "inadmin"
   def index
-    @cities = City.all.paginate :page => params[:page], :per_page => 20
+    @cities = City.all_active.paginate :page => params[:page], :per_page => 20
   end
 
   def show
@@ -36,7 +40,7 @@ class Admin::CitiesController < ApplicationController
 
   def destroy
     @city = City.find(params[:id])
-    @city.destroy
+    @city.newdestroy
     redirect_to admin_cities_url, :notice => "Successfully destroyed city."
   end
   

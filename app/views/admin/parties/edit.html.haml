@@ -1,0 +1,9 @@
+- title "Editar #{@party.name}"
+%h1
+  = "Editar #{@party.name}"
+
+= render 'form'
+
+%p
+  = link_to "Show", [:admin, @party], :class => "small secondary button"
+  = link_to "View All", admin_parties_path, :class => "small secondary button"

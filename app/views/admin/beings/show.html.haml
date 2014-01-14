@@ -1,0 +1,20 @@
+- title "Admin/Being"
+%h1
+  = "#{@being.name}"
+%p
+  %strong Data de Nascimento:
+  = @being.date_of_birth
+%p
+  %strong Escolaridade:
+  = @being.schooling.name
+%p
+  %strong Cidade:
+  = @being.city.name
+%p
+  %strong Partido:
+  = @being.party.name
+
+%p
+  = link_to "Edit", edit_admin_being_path(@being), :class => "small secondary button"
+  = link_to "Destroy", [:admin, @being], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
+  = link_to "View All", admin_beings_path, :class => "small secondary button"
