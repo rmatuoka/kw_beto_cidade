@@ -1,8 +1,8 @@
 require 'custom_logger'
 
 class Being < ActiveRecord::Base
-  attr_accessible :name, :date_of_birth, :schooling_id, :city_id, :party_id, :being_type_id, :group_ids, :user_id
-  validates_presence_of :name, :date_of_birth, :schooling_id, :city_id, :party_id
+  #attr_accessible :name, :date_of_birth, :schooling_id, :city_id, :party_id, :being_type_id, :group_ids, :user_id
+  validates_presence_of :name #, :schooling_id, :city_id, :party_id
   
   belongs_to :party
   belongs_to :city
@@ -10,6 +10,7 @@ class Being < ActiveRecord::Base
   belongs_to :being_party
   belongs_to :being_type
   belongs_to :user
+  belongs_to :company
   
   has_many :beings_groups
   

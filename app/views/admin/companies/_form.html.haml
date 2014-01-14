@@ -1,0 +1,9 @@
+= form_for [:admin, @company] do |f|  
+  .twelve.columns.alert-box.alert
+  = f.error_messages
+  %h1 Cadastro Empresa 
+  %p
+    = f.label :name, "Nome"
+    = f.text_field :name
+  %p
+    = f.submit "Salvar", :class => "button"  

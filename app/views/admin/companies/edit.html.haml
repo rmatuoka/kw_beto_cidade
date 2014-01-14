@@ -1,0 +1,10 @@
+- title "Edit Admin/Company"
+%h1
+  = "Editar #{@company.name}"
+%br/   
+
+= render 'form'
+
+%p
+  = link_to "Show", [:admin, @company], :class => "small secondary button"
+  = link_to "View All", admin_companies_path, :class => "small secondary button"

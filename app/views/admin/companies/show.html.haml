@@ -1,0 +1,11 @@
+- title "Admin/Company"
+%h1
+  = "#{@company.name}"
+%p
+  %strong Name:
+  = @company.name
+
+%p
+  = link_to "Edit", edit_admin_company_path(@company), :class => "small secondary button" 
+  = link_to "Destroy", [:admin, @company], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button" 
+  = link_to "View All", admin_companies_path, :class => "small secondary button" 

@@ -2,8 +2,11 @@
   #empresa
     %h2 Dados do Empresa
     %p
-      %label{:for => "being_emp_nome_empresa"} Nome da Empresa
-      %input#being_emp_nome_empresa{:name => "being[emp_nome_empresa]", :size => "30", :type => "text"}
+      %label{:for => "being_company_id"} Nome da Empresa 
+      %select#being_company_id{:name => "being[company_id]"}  
+        %option{:value => ""} Selecione 
+        - @companies.each do |company|
+          %option{:value => "#{company.id}"} #{company.name}         
     %p
       %label{:for => "being_emp_cargo"} Cargo
       %input#being_emp_cargo{:name => "being[emp_cargo]", :size => "30", :type => "text"} 

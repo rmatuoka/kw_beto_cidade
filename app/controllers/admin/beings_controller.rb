@@ -59,5 +59,8 @@ class Admin::BeingsController < ApplicationController
   
   def type
     @type = params[:id]
+    if @type.to_i == 1
+       @companies = Company.all
+    end
   end
 end

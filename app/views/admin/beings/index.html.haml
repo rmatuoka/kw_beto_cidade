@@ -8,16 +8,16 @@
   %tr
     %th Nome
     %th Tipo
-    %th Cidade
-    %th Partido
+    //%th Cidade
+    //%th Partido
     %th Criado por
     %th Ações
   - for being in @beings
     %tr
       %td= being.name
       %td= being.being_type.name
-      %td= being.city.name
-      %td= being.party.name
+      //%td=#being.city.name
+      //%td=#being.party.name
       %td= being.user.name
       %td
         = link_to 'Show', [:admin, being], :class => "small secondary button"

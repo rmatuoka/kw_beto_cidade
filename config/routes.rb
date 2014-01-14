@@ -1,4 +1,5 @@
 KwBetoCidades::Application.routes.draw do
+
   resources :user_sessions
   resources :users
   resources :password_resets
@@ -16,7 +17,7 @@ KwBetoCidades::Application.routes.draw do
     resources :being_types
     resources :groups
     resources :logs
-    
+    resources :companies
     resources :reports do
       collection do
         get 'register_by_user'
