@@ -6,7 +6,11 @@ KwBetoCidades::Application.routes.draw do
   
   #Inicio do namespace Admin
   namespace(:admin){
-    resources :beings
+    resources :beings do
+      member do 
+        get 'type'
+      end
+    end
     resources :schoolings
     resources :parties
     resources :being_types

@@ -27,85 +27,14 @@
       = g.name
   %p
     = f.label :being_type_id, "Tipo de Entidade"
-    = f.select :being_type_id, @being_types
+    = f.select :being_type_id, @being_types, :prompt => "Selecione"
     
-  #empresa    
-    %h2 Dados do Empresa
-    %p
-      = f.label :emp_nome_empresa, "Nome da Empresa"
-      = f.text_field :emp_nome_empresa
-    
-    %p
-      = f.label :emp_cargo, "Cargo"
-      = f.text_field :emp_cargo
-  
-    %p
-      = f.label :emp_potencia_votos, "Potência de Votos"
-      = f.text_field :emp_potencia_votos
-  
-    %p
-      = f.label :emp_tipo_empresa, "Tipo de Empresa"
-      = f.text_field :emp_tipo_empresa
-  
-    %h2 Dados do Prefeito
-    %p
-      = f.label :party_id, "Partido"
-      = f.select :party_id, @parties
-  
-  #prefeito  
-    %p
-      = f.label :city_id, "Cidade"
-      = f.select :city_id, @cities
-    
-    %p
-      = f.label :pre_numero_votos
-      = f.text_field :pre_numero_votos
-    
-    %p
-      = f.label :grau_relacionamento
-      = f.text_field :grau_relacionamento
-
-  #vereador  
-    %h2 Dados do Vereador
-    %p
-      = f.label :party_id, "Partido"
-      = f.select :party_id, @parties
-    
-    %p
-      = f.label :city_id, "Cidade"
-      = f.select :city_id, @cities
-    
-    %p
-      = f.label :ver_numero_votos
-      = f.text_field :ver_numero_votos
-    
-    %p
-      = f.label :grau_relacionamento
-      = f.text_field :grau_relacionamento
-  #secretario
-    %h2 Dados do(a) Secretário(a)
-    %p
-      = f.label :sec_potencia_votos
-      = f.text_field :sec_potencia_votos
-    %p
-      = f.label :grau_relacionamento
-      = f.text_field :grau_relacionamento
-    %p
-      = f.label :sec_primeira_divisao
-      = f.text_field :sec_primeira_divisao
-    %p
-      = f.label :sec_segunda_divisao
-      = f.text_field :sec_segunda_divisao
-  
-  #dirigente  
-    %h2 Dados do Dirigente
-    %p
-      = f.label :dir_potencia_votos
-      = f.text_field :dir_potencia_votos
-
-    %p
-      = f.label :grau_relacionamento
-      = f.text_field :grau_relacionamento
+  %div#ShowSelects
  
   %p
     = f.submit "Salvar", :class => "button"
+
+:javascript
+  $(function() { 
+    changeSelects("being_being_type_id", "ShowSelects"); 
+  });

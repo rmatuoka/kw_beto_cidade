@@ -1,0 +1,192 @@
+-if @type.to_s == "1"
+  #empresa
+    %h2 Dados do Empresa
+    %p
+      %label{:for => "being_emp_nome_empresa"} Nome da Empresa
+      %input#being_emp_nome_empresa{:name => "being[emp_nome_empresa]", :size => "30", :type => "text"}
+    %p
+      %label{:for => "being_emp_cargo"} Cargo
+      %input#being_emp_cargo{:name => "being[emp_cargo]", :size => "30", :type => "text"} 
+      
+    %p
+      %label{:for => "being_emp_potencia_votos"} Grau de Relacionamento      
+      %input#user_name_1{:name => "being[grau_relacionamento]", :type => "radio", :value => "1"}
+        Alfa
+        %input#user_name_2{:name => "being[grau_relacionamento]", :type => "radio", :value => "2"}
+          Beta
+          %input#user_name_3{:name => "being[grau_relacionamento]", :type => "radio", :value => "3"}
+            Gama
+            %input#user_name_4{:name => "being[grau_relacionamento]", :type => "radio", :value => "4"}
+              Delta
+              %input#user_name_5{:name => "being[grau_relacionamento]", :type => "radio", :value => "5"} Elfo
+    %p
+      %label{:for => "being_emp_potencia_votos"} Potência de Votos
+      %input#being_emp_potencia_votos{:name => "being[emp_potencia_votos]", :size => "30", :type => "text"}
+    %p
+      %label{:for => "being_emp_tipo_empresa"} Tipo de Empresa  
+      %select#being_emp_tipo_empresa{:name => "being[emp_tipo_empresa]"}  
+        %option{:value => ""} Selecione
+        %option{:value => "1"} Fornecedora
+        %option{:value => "2"} Apoiadora     
+        %option{:value => "3"} Patrocinadora
+        %option{:value => "4"} Parceira        
+
+        
+-if @type.to_s == "2"
+  #prefeito
+    %h2 Dados do Prefeito
+    %p
+      %label{:for => "being_party_id"} Partido
+      %select#being_party_id{:name => "being[party_id]"}
+        %option{:value => "1"} Partido Verde
+        %option{:value => "2"} Partido do Trabalhador
+    %p
+      %label{:for => "being_city_id"} Cidade
+      %select#being_city_id{:name => "being[city_id]"}
+        %option{:value => "2"} Atibaia
+        %option{:value => "3"} Bragança Paulista
+        %option{:value => "4"} São Paulo
+    %p
+      %label{:for => "being_pre_numero_votos"} Número votos
+      %input#being_pre_numero_votos{:name => "being[pre_numero_votos]", :size => "30", :type => "text"}
+    %p
+      %label{:for => "being_emp_potencia_votos"} Grau de Relacionamento      
+      %input#user_name_1{:name => "being[grau_relacionamento]", :type => "radio", :value => "1"}
+        Alfa
+        %input#user_name_2{:name => "being[grau_relacionamento]", :type => "radio", :value => "2"}
+          Beta
+          %input#user_name_3{:name => "being[grau_relacionamento]", :type => "radio", :value => "3"}
+            Gama
+            %input#user_name_4{:name => "being[grau_relacionamento]", :type => "radio", :value => "4"}
+              Delta
+              %input#user_name_5{:name => "being[grau_relacionamento]", :type => "radio", :value => "5"} Elfo      
+      
+-if @type.to_s == "3"
+  #vereador
+    %h2 Dados do Vereador
+    %p
+      %label{:for => "being_party_id"} Partido
+      %select#being_party_id{:name => "being[party_id]"}
+        %option{:value => "1"} Partido Verde
+        %option{:value => "2"} Partido do Trabalhador
+    %p
+      %label{:for => "being_city_id"} Cidade
+      %select#being_city_id{:name => "being[city_id]"}
+        %option{:value => "2"} Atibaia
+        %option{:value => "3"} Bragança Paulista
+        %option{:value => "4"} São Paulo
+    %p
+      %label{:for => "being_ver_numero_votos"}Número votos
+      %input#being_ver_numero_votos{:name => "being[ver_numero_votos]", :size => "30", :type => "text"}
+    %p
+      %label{:for => "being_emp_potencia_votos"} Grau de Relacionamento      
+      %input#user_name_1{:name => "being[grau_relacionamento]", :type => "radio", :value => "1"}
+        Alfa
+        %input#user_name_2{:name => "being[grau_relacionamento]", :type => "radio", :value => "2"}
+          Beta
+          %input#user_name_3{:name => "being[grau_relacionamento]", :type => "radio", :value => "3"}
+            Gama
+            %input#user_name_4{:name => "being[grau_relacionamento]", :type => "radio", :value => "4"}
+              Delta
+              %input#user_name_5{:name => "being[grau_relacionamento]", :type => "radio", :value => "5"} Elfo   
+
+- if @type.to_s == "4"
+  #secretario                                                                                                            
+    %h2 Dados do(a) Secretário(a)
+
+    %p
+      %label{:for => "being_emp_potencia_votos"} Grau de Relacionamento      
+      %input#user_name_1{:name => "being[grau_relacionamento]", :type => "radio", :value => "1"}
+        Alfa
+        %input#user_name_2{:name => "being[grau_relacionamento]", :type => "radio", :value => "2"}
+          Beta
+          %input#user_name_3{:name => "being[grau_relacionamento]", :type => "radio", :value => "3"}
+            Gama
+            %input#user_name_4{:name => "being[grau_relacionamento]", :type => "radio", :value => "4"}
+              Delta
+              %input#user_name_5{:name => "being[grau_relacionamento]", :type => "radio", :value => "5"} Elfo           
+    %p
+      %label{:for => "being_sec_potencia_votos"} Potencia votos
+      %input#being_sec_potencia_votos{:name => "being[sec_potencia_votos]", :size => "30", :type => "text"}  
+    %p
+      %label{:for => "being_sec_primeira_divisao"} Cargo  
+      %select#being_sec_primeira_divisao{:name => "being[sec_primeira_divisao]"}  
+        %option{:value => ""}Selecione o Cargo
+        %option{:value => "1"}Diretoria
+        %option{:value => "2"}Coordenadoria
+        %option{:value => "3"}Superintendente  
+    %p
+      %label{:for => "being_sec_segunda_divisao"} Secretarias
+      %select#being_sec_segunda_divisao{:name => "being[sec_segunda_divisao]"}
+        %option{:value => ""} Selecione a Secretaria
+        %option{:value => "1"} Governo
+        %option{:value => "2"} Chefe de Gabinete
+        %option{:value => "3"} Comunicação
+        %option{:value => "4"} Desenvolvimento Social
+        %option{:value => "5"} Desenvolvimento Econômico
+        %option{:value => "6"} Relações do trabalho
+        %option{:value => "7"} Serviços
+        %option{:value => "8"} Serviços e trânsito
+        %option{:value => "9"} Trânsito
+        %option{:value => "10"}Infraestrutura
+        %option{:value => "11"}Obras
+        %option{:value => "12"}Urbanismo
+        %option{:value => "13"}Meio Ambiente
+        %option{:value => "14"}Agricultura
+        %option{:value => "15"}Turismo
+        %option{:value => "16"}Educação
+        %option{:value => "17"}Cultura
+        %option{:value => "18"}Saúde
+        %option{:value => "19"}Desenvolvimento Urbano
+        %option{:value => "20"}Recursos Humanos
+        %option{:value => "21"}Da Mulher
+        %option{:value => "22"}Coordenadora de Relações Institucionais
+        %option{:value => "23"}Administração
+        %option{:value => "24"}Finanças
+        %option{:value => "25"}Planejamento
+        %option{:value => "26"}Esportes
+        %option{:value => "27"}Negócios Jurídicos
+
+- if @type.to_s == "5"
+  #dirigente
+    %h2 Dados do Dirigente
+    %p
+      %label{:for => "being_emp_potencia_votos"} Grau de Relacionamento      
+      %input#user_name_1{:name => "being[grau_relacionamento]", :type => "radio", :value => "1"}
+        Alfa
+        %input#user_name_2{:name => "being[grau_relacionamento]", :type => "radio", :value => "2"}
+          Beta
+          %input#user_name_3{:name => "being[grau_relacionamento]", :type => "radio", :value => "3"}
+            Gama
+            %input#user_name_4{:name => "being[grau_relacionamento]", :type => "radio", :value => "4"}
+              Delta
+              %input#user_name_5{:name => "being[grau_relacionamento]", :type => "radio", :value => "5"} Elfo    
+    %p
+      %label{:for => "being_dir_potencia_votos"} Potencia votos
+      %input#being_dir_potencia_votos{:name => "being[dir_potencia_votos]", :size => "30", :type => "text"}   
+    %p
+      %label{:for => "being_dir_primeira_divisao"} Primeira Divisão  
+      %select#being_dir_primeira_divisao{:name => "being[dir_primeira_divisao]"}  
+        %option{:value => ""} Selecione 
+        %option{:value => "1"} Associação
+        %option{:value => "2"} Instituição
+        %option{:value => "3"} Fundação
+        %option{:value => "4"} Organização
+        %option{:value => "5"} Clube
+        %option{:value => "6"} Federação
+        %option{:value => "7"} Confederação
+        %option{:value => "8"} Cooperativa
+        %option{:value => "9"} Sindicato
+        %option{:value => "10"}Agência
+        %option{:value => "11"}Consórcio
+        %option{:value => "12"}Partido 
+    %p
+      %label{:for => "being_dir_segunda_divisao"} Qual?
+      %input#being_dir_segunda_divisao{:name => "being[dir_segunda_divisao]", :size => "30", :type => "text"}            
+                
+                
+                
+                
+                
+                
+                

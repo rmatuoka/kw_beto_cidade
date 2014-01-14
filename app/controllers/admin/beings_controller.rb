@@ -3,7 +3,7 @@ class Admin::BeingsController < ApplicationController
       allow :admin, :acessor, :deputado, :all
   end
   
-  layout "inadmin"
+  layout "inadmin", :except=>[:type]
   before_filter :load_dropdowns
   
   def index
@@ -55,5 +55,9 @@ class Admin::BeingsController < ApplicationController
     @parties = Party.all.collect { |c| [c.name, c.id] }
     @cities = City.all.collect { |c| [c.name, c.id] }
     @being_types = BeingType.all.collect { |c| [c.name, c.id] }
+  end
+  
+  def type
+    @type = params[:id]
   end
 end
