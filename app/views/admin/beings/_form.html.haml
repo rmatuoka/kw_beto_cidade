@@ -19,12 +19,13 @@
   %p
     = f.label :cellphone, "Celular"
     = f.text_field :cellphone
+ 
   
-  %h2 Esta entidade pertence a quais grupos?
-  %p
-    - Group.all.each do |g|
-      = check_box_tag 'being[group_ids][]', g.id, @being.group_ids.include?(g.id)
-      = g.name
+  //%h2 Esta entidade pertence a quais grupos?
+  //%p
+  //  - Group.all.each do |g|
+  //    = check_box_tag 'being[group_ids][]', g.id, @being.group_ids.include?(g.id)
+  //    = g.name
   %p
     = f.label :being_type_id, "Tipo de Entidade"
     = f.select :being_type_id, @being_types, :prompt => "Selecione"
