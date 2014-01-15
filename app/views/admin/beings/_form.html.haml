@@ -36,5 +36,13 @@
 
 :javascript
   $(function() { 
-    changeSelects("being_being_type_id", "ShowSelects"); 
+    changeSelects("being_being_type_id", "ShowSelects", "#{@being.id}"); 
   });
+  
+-if !@being.id.blank?
+  :javascript 
+    $(document).ready(function() {
+      jQuery.get('/admin/beings/#{@being.being_type_id}/type?cod=#{@being.id}', function(data){ 
+        jQuery("#ShowSelects").html(data); 
+      })
+    });

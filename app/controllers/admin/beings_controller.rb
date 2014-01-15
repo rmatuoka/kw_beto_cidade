@@ -5,6 +5,7 @@ class Admin::BeingsController < ApplicationController
   
   layout "inadmin", :except=>[:type]
   before_filter :load_dropdowns
+ 
   
   def index
     if current_user.has_role? :acessor
@@ -55,12 +56,34 @@ class Admin::BeingsController < ApplicationController
     @parties = Party.all.collect { |c| [c.name, c.id] }
     @cities = City.all.collect { |c| [c.name, c.id] }
     @being_types = BeingType.all.collect { |c| [c.name, c.id] }
+      
+    
+
+     
+
+    
+    @grau_relacionamento = DegreeRelationship.all 
   end
   
   def type
+    if !params[:cod].blank?
+      @being = Being.find(params[:cod])
+    else 
+      @being = Being.new
+    end
     @type = params[:id]
     if @type.to_i == 1
-       @companies = Company.all
+       @typeCompanies = TypeCompany.all.collect { |c| [c.name, c.id] }
+       @companies = Company.all.collect { |c| [c.name, c.id] } 
+    end
+    
+    if @type.to_i == 4
+      @sec_positions = SecretaryPosition.all.collect { |c| [c.name, c.id] }
+      @sec_secretary = SecretarySecretary.all.collect { |c| [c.name, c.id] }
+    end
+    
+    if @type.to_i == 5
+      @ruling_positions = RulingPosition.all.collect { |c| [c.name, c.id] }    
     end
   end
 end

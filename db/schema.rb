@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140114212521) do
+ActiveRecord::Schema.define(:version => 20140115003332) do
 
   create_table "being_types", :force => true do |t|
     t.string   "name"
@@ -108,6 +108,12 @@ ActiveRecord::Schema.define(:version => 20140114212521) do
     t.datetime "updated_at"
   end
 
+  create_table "degree_relationships", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "entities", :force => true do |t|
     t.string   "nome"
     t.datetime "fundacao"
@@ -188,11 +194,35 @@ ActiveRecord::Schema.define(:version => 20140114212521) do
     t.datetime "updated_at"
   end
 
+  create_table "ruling_positions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "schoolings", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "active",     :default => true
+  end
+
+  create_table "secretary_positions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "secretary_secretaries", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "type_companies", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "user_sessions", :force => true do |t|
