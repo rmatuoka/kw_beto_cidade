@@ -6,7 +6,7 @@
       %p
         = f.label :company_id, "Nome da Empresa"
         = f.select :company_id, @companies
-        = link_to "[nova empresa]", new_company_path
+        = link_to "[nova empresa]", new_admin_company_path
       %p
         = f.label :emp_cargo, "Cargo"
         = f.text_field :emp_cargo
