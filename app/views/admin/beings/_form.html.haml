@@ -5,14 +5,26 @@
   %h1 Cadastro Básico
   %p
     = f.label :name, "Nome"
-    = f.text_field :name
+    = f.text_field :name    
+  %p
+    = f.label :date_of_birth, "Data de Nascimento"
+    = f.date_select :date_of_birth, :start_year => 1910  
+  %p
+    = f.label :email, "E-mail"
+    = f.text_field :email     
   %p
     = f.label :address, "Endereço"
     = f.text_field :address
   %p
     = f.label :number, "Número"
     = f.text_field :number
-  
+  %p
+    = f.label :zip_code, "CEP"
+    = f.text_field :zip_code     
+  %p
+    = f.label :city_id, "Cidade"
+    = f.select :city_id, @cities, :prompt => "Selecione"
+    = link_to "[nova cidade]", new_admin_city_path 
   %p
     = f.label :phone, "Telefone"
     = f.text_field :phone
@@ -38,12 +50,13 @@
 :javascript
   $(function() { 
     changeSelects("being_being_type_id", "ShowSelects", "#{@being.id}"); 
-  });
+  }); 
+  $('#being_zip_code').setMask('cep'); 
   
 -if !@being.id.blank?
   :javascript 
     $(document).ready(function() {
       jQuery.get('/admin/beings/#{@being.being_type_id}/type?cod=#{@being.id}', function(data){ 
         jQuery("#ShowSelects").html(data); 
-      })
+      });
     });

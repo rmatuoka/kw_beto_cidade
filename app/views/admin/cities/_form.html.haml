@@ -6,7 +6,11 @@
     .field
       %p= f.submit "Salvar", :class => "button"
       = f.label :name, "Nome"
-      = f.text_field :name, :placeholder => "Nome"
+      = f.text_field :name, :placeholder => "Nome" 
+      
+    .field
+      = f.label :state, "Estado"
+      = f.select :state, ESTADOS_BRASILEIROS
     
     .field
       = f.label :endprefeitura, "Endereço da Prefeitura"

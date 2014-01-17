@@ -24,18 +24,16 @@
         = f.label :emp_tipo_empresa, "Tipo de Empresa"
         = f.select :emp_tipo_empresa, @typeCompanies, :prompt => "Selecione"      
         
-
-        
   -if @type.to_s == "2"  
     #prefeito
       %h2 Dados do Prefeito
       %p
+        = f.label :city_work_id, "Cidade"
+        = f.select :city_work_id, @cities, :prompt => "Selecione"
+        = link_to "[nova cidade]", new_admin_city_path
+      %p
         = f.label :party_id, "Partido"
         = f.select :party_id, @parties
-
-      %p
-        = f.label :city_id, "Cidade"
-        = f.select :city_id, @cities
 
       %p
         = f.label :pre_numero_votos, "Números de Votos"
@@ -52,12 +50,12 @@
     #vereador  
       %h2 Dados do Vereador
       %p
+        = f.label :city_work_id, "Cidade"
+        = f.select :city_work_id, @cities, :prompt => "Selecione"
+        = link_to "[nova cidade]", new_admin_city_path      
+      %p
         = f.label :party_id, "Partido"
         = f.select :party_id, @parties
-
-      %p
-        = f.label :city_id, "Cidade"
-        = f.select :city_id, @cities
 
       %p
         = f.label :ver_numero_votos, "Números de Votos"

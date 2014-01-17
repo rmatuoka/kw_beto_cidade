@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140115003332) do
+ActiveRecord::Schema.define(:version => 20140117195618) do
 
   create_table "being_types", :force => true do |t|
     t.string   "name"
@@ -52,6 +52,9 @@ ActiveRecord::Schema.define(:version => 20140115003332) do
     t.string   "dir_segunda_divisao"
     t.string   "grau_relacionamento"
     t.integer  "company_id"
+    t.string   "zip_code"
+    t.string   "email"
+    t.integer  "city_work_id"
   end
 
   create_table "beings_groups", :force => true do |t|
@@ -94,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20140115003332) do
     t.text     "estrutbemanimal"
     t.integer  "user_id"
     t.boolean  "active",             :default => true
+    t.string   "state"
   end
 
   create_table "companies", :force => true do |t|
