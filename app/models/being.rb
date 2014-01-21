@@ -5,8 +5,8 @@ class Being < ActiveRecord::Base
   validates_presence_of :name #, :schooling_id, :city_id, :party_id
   
   belongs_to :party
-  belongs_to :city_being, :class_name="City", :foreign_key=>"city_id"
-  belongs_to :city_work, :class_name="City", :foreign_key=>"city_work_id"   
+  belongs_to :city_being, :class_name => "City", :foreign_key => "city_id"
+  belongs_to :city_work, :class_name => "City", :foreign_key => "city_work_id"   
   belongs_to :schooling
   belongs_to :being_party
   belongs_to :being_type
@@ -17,6 +17,10 @@ class Being < ActiveRecord::Base
   
   has_many :groups,
       :through => :beings_groups
+        
+  has_many :beings_secretary_secretaries    
+  has_many :secretary_secretaries,
+      :through => :beings_secretary_secretaries 
       
   before_save :log_user_action
 end

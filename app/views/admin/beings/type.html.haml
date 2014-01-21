@@ -44,9 +44,29 @@
         -@grau_relacionamento.each do |relacionamento|
           =f.radio_button :grau_relacionamento, relacionamento.id
           =relacionamento.name      
-  
+
+  -if @type.to_s == "3"  
+    #vice_prefeito
+      %h2 Dados do Vice Prefeito
+      %p
+        = f.label :city_work_id, "Cidade"
+        = f.select :city_work_id, @cities, :prompt => "Selecione"
+        = link_to "[nova cidade]", new_admin_city_path
+      %p
+        = f.label :party_id, "Partido"
+        = f.select :party_id, @parties
+
+      %p
+        = f.label :pre_numero_votos, "Números de Votos"
+        = f.text_field :pre_numero_votos
+
+      %p
+        = f.label :grau_relacionamento, "Grau de Relacionamento" 
+        -@grau_relacionamento.each do |relacionamento|
+          =f.radio_button :grau_relacionamento, relacionamento.id
+          =relacionamento.name      
       
-  -if @type.to_s == "3"
+  -if @type.to_s == "4"
     #vereador  
       %h2 Dados do Vereador
       %p
@@ -67,7 +87,7 @@
           =f.radio_button :grau_relacionamento, relacionamento.id
           =relacionamento.name 
 
-  - if @type.to_s == "4"
+  - if @type.to_s == "5"
     #secretario
       %h2 Dados do(a) Secretário(a)
       %p
@@ -83,10 +103,21 @@
         = f.select :sec_primeira_divisao, @sec_positions
       %p
         = f.label :sec_segunda_divisao
-        = f.select :sec_segunda_divisao, @sec_secretary
-      
+        = f.select :secretary_secretary_ids, @sec_secretary, {}, :multiple => true, :class=>"chzn-select" 
+      //=stylesheet_link_tag "chosen.min.css"
+      //=javascript_include_tag "chosen.jquery.min.js"        
+      //:javascript
+      //  $(".chzn-select").chosen();
+      //  $(".chzn-select").chosen().change(function(){
+      //       selectedValue = $(this).find("option:selected").val(); 
+      //       alert(selectedValue);
+      //  });  
+      //  $("#being_secretary_secretary_ids").chosen({width: "100%"});  
+      //  $("#being_secretary_secretary_ids").trigger("chosen:activate"); 
 
-  - if @type.to_s == "5"   
+             
+
+  - if @type.to_s == "6"   
     #dirigente  
       %h2 Dados do Dirigente
       %p
@@ -105,7 +136,33 @@
       %p
         = f.label :dir_segunda_divisao, "Qual?"
         = f.text_field :dir_potencia_votos      
-            
+
+  - if @type.to_s == "7"   
+    #individual  
+      %h2 Dados
+      %p
+        = f.label :grau_relacionamento, "Grau de Relacionamento" 
+        -@grau_relacionamento.each do |relacionamento|
+          =f.radio_button :grau_relacionamento, relacionamento.id
+          =relacionamento.name
+          
+  - if @type.to_s == "8"   
+    #militante  
+      %h2 Dados do Militante
+      %p
+        = f.label :grau_relacionamento, "Grau de Relacionamento" 
+        -@grau_relacionamento.each do |relacionamento|
+          =f.radio_button :grau_relacionamento, relacionamento.id
+          =relacionamento.name     
+          
+  - if @type.to_s == "9"   
+    #lideranca  
+      %h2 Dados da Liderança
+      %p
+        = f.label :grau_relacionamento, "Grau de Relacionamento" 
+        -@grau_relacionamento.each do |relacionamento|
+          =f.radio_button :grau_relacionamento, relacionamento.id
+          =relacionamento.name   
                 
                 
                 

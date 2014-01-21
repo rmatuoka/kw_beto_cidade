@@ -72,17 +72,18 @@ class Admin::BeingsController < ApplicationController
       @being = Being.new
     end
     @type = params[:id]
+    # Se for empresario
     if @type.to_i == 1
        @typeCompanies = TypeCompany.all.collect { |c| [c.name, c.id] }
        @companies = Company.all.collect { |c| [c.name, c.id] } 
     end
-    
-    if @type.to_i == 4
-      @sec_positions = SecretaryPosition.all.collect { |c| [c.name, c.id] }
-      @sec_secretary = SecretarySecretary.all.collect { |c| [c.name, c.id] }
-    end
-    
+    # Se for secretario
     if @type.to_i == 5
+      @sec_positions = SecretaryPosition.all.collect { |c| [c.name, c.id] }
+      @sec_secretary = SecretarySecretary.all.collect { |c| [c.name, c.id] } 
+    end
+    # Se for dirigente
+    if @type.to_i == 6
       @ruling_positions = RulingPosition.all.collect { |c| [c.name, c.id] }    
     end
   end
