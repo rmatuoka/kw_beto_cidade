@@ -102,8 +102,10 @@
         = f.label :sec_primeira_divisao
         = f.select :sec_primeira_divisao, @sec_positions
       %p
-        = f.label :sec_segunda_divisao
-        = f.select :secretary_secretary_ids, @sec_secretary, {}, :multiple => true, :class=>"chzn-select" 
+        = f.label :sec_segunda_divisao  
+        = f.select :secretary_secretary_ids, @sec_secretary, {}, :multiple => true, :class=>"chzn-select"  
+        %br 
+        %span Para selecionar mais de uma secretaria segure CTRL ou Command        
       //=stylesheet_link_tag "chosen.min.css"
       //=javascript_include_tag "chosen.jquery.min.js"        
       //:javascript

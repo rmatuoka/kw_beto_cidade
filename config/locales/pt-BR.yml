@@ -184,6 +184,20 @@
       even: "deve ser par"
 
   activerecord:
+    attributes:
+      default: &default_name
+        name: 'Nome'
+        email: 'E-mail'
+        mail: 'E-mail'
+        phone: 'Telefone'
+        active: 'Ativo'
+        published: 'Publicado'
+        city: "Cidade"
+        commercial_phone: "Telefone Comercial"   
+        password: "Senha"
+      being:
+        <<: *default_name   
+        being_type_id: 'Tipo de Entidade'          
     errors:
       template:
         header:
