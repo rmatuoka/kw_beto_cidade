@@ -5,7 +5,7 @@
       %h2 Dados do Empresa
       %p
         = f.label :company_id, "Nome da Empresa"
-        = f.select :company_id, @companies
+        = f.select :company_id, @companies,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione a Empresa"}
         = link_to "[nova empresa]", new_admin_company_path
       %p
         = f.label :emp_cargo, "Cargo"
@@ -22,18 +22,18 @@
 
       %p
         = f.label :emp_tipo_empresa, "Tipo de Empresa"
-        = f.select :emp_tipo_empresa, @typeCompanies, :prompt => "Selecione"      
+        = f.select :emp_tipo_empresa, @typeCompanies,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione o tipo de Empresa"}      
         
   -if @type.to_s == "2"  
     #prefeito
       %h2 Dados do Prefeito
       %p
         = f.label :city_work_id, "Cidade"
-        = f.select :city_work_id, @cities, :prompt => "Selecione"
+        = f.select :city_work_id, @cities,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione a Cidade"}  
         = link_to "[nova cidade]", new_admin_city_path
       %p
         = f.label :party_id, "Partido"
-        = f.select :party_id, @parties
+        = f.select :party_id, @parties,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione o Partido"}  
 
       %p
         = f.label :pre_numero_votos, "Números de Votos"
@@ -50,11 +50,11 @@
       %h2 Dados do Vice Prefeito
       %p
         = f.label :city_work_id, "Cidade"
-        = f.select :city_work_id, @cities, :prompt => "Selecione"
+        = f.select :city_work_id, @cities,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione a Cidade"}  
         = link_to "[nova cidade]", new_admin_city_path
       %p
         = f.label :party_id, "Partido"
-        = f.select :party_id, @parties
+        = f.select :party_id, @parties,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione o Partido"} 
 
       %p
         = f.label :pre_numero_votos, "Números de Votos"
@@ -71,11 +71,11 @@
       %h2 Dados do Vereador
       %p
         = f.label :city_work_id, "Cidade"
-        = f.select :city_work_id, @cities, :prompt => "Selecione"
+        = f.select :city_work_id, @cities,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione a Cidade"} 
         = link_to "[nova cidade]", new_admin_city_path      
       %p
         = f.label :party_id, "Partido"
-        = f.select :party_id, @parties
+        = f.select :party_id, @parties,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione o Partido"}
 
       %p
         = f.label :ver_numero_votos, "Números de Votos"
@@ -86,7 +86,7 @@
         -@grau_relacionamento.each do |relacionamento|
           =f.radio_button :grau_relacionamento, relacionamento.id
           =relacionamento.name 
-
+        
   - if @type.to_s == "5"
     #secretario
       %h2 Dados do(a) Secretário(a)
@@ -99,23 +99,11 @@
         = f.label :sec_potencia_votos, "Números de Votos"
         = f.text_field :sec_potencia_votos
       %p
-        = f.label :sec_primeira_divisao
-        = f.select :sec_primeira_divisao, @sec_positions
+        = f.label :sec_primeira_divisao, "Tipo"
+        = f.select :sec_primeira_divisao, @sec_positions,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione o Tipo"}
       %p
-        = f.label :sec_segunda_divisao  
-        = f.select :secretary_secretary_ids, @sec_secretary, {}, :multiple => true, :class=>"chzn-select"  
-        %br 
-        %span Para selecionar mais de uma secretaria segure CTRL ou Command        
-      //=stylesheet_link_tag "chosen.min.css"
-      //=javascript_include_tag "chosen.jquery.min.js"        
-      //:javascript
-      //  $(".chzn-select").chosen();
-      //  $(".chzn-select").chosen().change(function(){
-      //       selectedValue = $(this).find("option:selected").val(); 
-      //       alert(selectedValue);
-      //  });  
-      //  $("#being_secretary_secretary_ids").chosen({width: "100%"});  
-      //  $("#being_secretary_secretary_ids").trigger("chosen:activate"); 
+        = f.label :sec_segunda_divisao, "Local" 
+        = f.select :secretary_secretary_ids, @sec_secretary, {:include_blank=>true}, {:multiple => true,:class => "chosen-select", :"data-placeholder"=>"Selecione "}       
 
              
 
@@ -132,12 +120,12 @@
         = f.text_field :dir_potencia_votos
       
       %p
-        = f.label :dir_primeira_divisao
-        = f.select :dir_primeira_divisao, @ruling_positions   
+        = f.label :dir_primeira_divisao, "Tipo"
+        = f.select :dir_primeira_divisao, @ruling_positions,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione o Tipo"}   
       
       %p
         = f.label :dir_segunda_divisao, "Qual?"
-        = f.text_field :dir_potencia_votos      
+        = f.text_field :dir_segunda_divisao      
 
   - if @type.to_s == "7"   
     #individual  

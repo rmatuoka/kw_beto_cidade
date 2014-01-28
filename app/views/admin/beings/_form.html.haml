@@ -23,7 +23,7 @@
     = f.text_field :zip_code     
   %p
     = f.label :city_id, "Cidade"
-    = f.select :city_id, @cities, :prompt => "Selecione"
+    = f.select :city_id, @cities,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione a Cidade"}
     = link_to "[nova cidade]", new_admin_city_path 
   %p
     = f.label :phone, "Telefone"
@@ -40,7 +40,7 @@
   //    = g.name
   %p
     = f.label :being_type_id, "Tipo de Entidade"
-    = f.select :being_type_id, @being_types, :prompt => "Selecione"
+    = f.select :being_type_id, @being_types,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione o Tipo de Entidade"}
     
   %div#ShowSelects
  
@@ -52,11 +52,13 @@
     changeSelects("being_being_type_id", "ShowSelects", "#{@being.id}"); 
   }); 
   $('#being_zip_code').setMask('cep'); 
+  $('.chosen-select').chosen({no_results_text: "Nenhum resultado para",width: "50%"});
   
 -if !@being.id.blank?
   :javascript 
     $(document).ready(function() {
       jQuery.get('/admin/beings/#{@being.being_type_id}/type?cod=#{@being.id}', function(data){ 
         jQuery("#ShowSelects").html(data); 
-      });
+        jQuery('.chosen-select').chosen({no_results_text: "Nenhum resultado para",width: "50%"});
+      }); 
     });

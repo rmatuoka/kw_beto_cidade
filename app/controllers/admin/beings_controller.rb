@@ -52,10 +52,10 @@ class Admin::BeingsController < ApplicationController
   end
   
   def load_dropdowns
-    @schoolings = Schooling.all.collect { |c| [c.name, c.id] }
-    @parties = Party.all.collect { |c| [c.name, c.id] }
-    @cities = City.all.collect { |c| [c.name+" - "+c.state, c.id] }
-    @being_types = BeingType.all.collect { |c| [c.name, c.id] }
+    @schoolings = Schooling.all(:order => :name).collect { |c| [c.name, c.id] }
+    @parties = Party.all(:order => :name).collect { |c| [c.name, c.id] }
+    @cities = City.all(:order => :name).collect { |c| [c.name+" - "+c.state, c.id] }
+    @being_types = BeingType.all(:order => :name).collect { |c| [c.name, c.id] }
       
     
 
