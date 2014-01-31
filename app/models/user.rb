@@ -26,8 +26,8 @@ class User < ActiveRecord::Base
       @role = :admin
     elsif self.has_role? :deputado
       @role = :deputado
-    elsif self.has_role? :acessor
-      @role = :acessor
+    elsif self.has_role? :assessor
+      @role = :assessor
     end
   end
 

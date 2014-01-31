@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140131133516) do
+ActiveRecord::Schema.define(:version => 20140131143029) do
 
   create_table "being_types", :force => true do |t|
     t.string   "name"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20140131133516) do
     t.integer  "city_work_id"
     t.string   "neighborhood"
     t.string   "complement"
+    t.string   "cand_numero_votos"
   end
 
   create_table "beings_groups", :force => true do |t|

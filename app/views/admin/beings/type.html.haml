@@ -153,8 +153,23 @@
         -@grau_relacionamento.each do |relacionamento|
           =f.radio_button :grau_relacionamento, relacionamento.id
           =relacionamento.name   
+
+
+  - if @type.to_s == "10"   
+    #candidato                                               
+      %h2 Dados do Candidato
+      %p
+        = f.label :grau_relacionamento, "Grau de Relacionamento" 
+        -@grau_relacionamento.each do |relacionamento|
+          =f.radio_button :grau_relacionamento, relacionamento.id
+          =relacionamento.name
+      %p
+        = f.label :party_id, "Partido"
+        = f.select :party_id, @parties,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione o Partido"}    
                 
-                
+      %p
+        = f.label :cand_numero_votos, "Números de Votos"
+        = f.text_field :cand_numero_votos
                 
                 
                 

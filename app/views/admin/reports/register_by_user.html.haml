@@ -12,7 +12,7 @@
     %tr
       %td= "#{user.name} #{user.last_name}"
       %td= user.role
-      %td= user.last_login_at
+      %td= user.last_login_at.strftime("%d/%m/%Y %H:%m:%S") if !user.last_login_at.blank?
       %td= user.beings.count
       
 %p
