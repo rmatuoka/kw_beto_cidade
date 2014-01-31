@@ -1,6 +1,6 @@
 class Admin::GroupsController < ApplicationController
   access_control do
-      allow :admin, :acessor, :deputado, :all
+      allow :admin, :assessor, :deputado, :all
   end
   
   layout "inadmin"
