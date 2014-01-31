@@ -14,9 +14,9 @@
     <tr>
       <td><%= city.name %></td>
       <td><%= city.population %></td>
-      <td><%= link_to "Show", admin_city_path(city) %></td>
-      <td><%= link_to "Edit", edit_admin_city_path(city) %></td>
-      <td><%= link_to "Destroy", admin_city_path(city), :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Visualizar", admin_city_path(city) %></td>
+      <td><%= link_to "Editar", edit_admin_city_path(city) %></td>
+      <td><%= link_to("Apagar", admin_city_path(city), :confirm => 'Are you sure?', :method => :delete) if User.find(current_user.id).has_role? :admin %></td>
     </tr>
   <% end %>
 </table>
@@ -24,4 +24,4 @@
 <h2>Não foi digitado nenhum termo na barra de pesquisa</h2>
 <%end%>
 <br><br>
-<%=link_to "Voltar", admin_cities_path, :class => "button"%>
+<%=link_to "Ver Todas", admin_cities_path, :class => "button"%>

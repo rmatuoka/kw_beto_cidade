@@ -1,4 +1,4 @@
-<% title "Admin/Entity" %>
+<% title "Empresa - #{@entity.name}" %>
 
 <p>
   <strong>Nome:</strong>
@@ -102,7 +102,7 @@
 </p>
 
 <p>
-  <%= link_to "Editar", edit_admin_city_entity_path(@city, @entity), :class => "small button secondary" %> |
-  <%= link_to "Deletar", admin_city_entity_path(@city, @entity), :class => "small button secondary", :confirm => 'Tem certeza?', :method => :delete %> |
+  <%= link_to "Editar", edit_admin_city_entity_path(@city, @entity), :class => "small button secondary" %> 
+  <%= link_to("Apagar", admin_city_entity_path(@city, @entity), :class => "small button secondary", :confirm => 'Tem certeza?', :method => :delete ) if User.find(current_user.id).has_role? :admin%>
   <%= link_to "Ver Todas", admin_city_entities_path(@city), :class => "small button secondary" %>
 </p>

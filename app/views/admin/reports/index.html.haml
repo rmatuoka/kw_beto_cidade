@@ -16,7 +16,7 @@
       %td= report.being_types_ids
       %td= report.user.name
       %td
-        = link_to 'Show', [:admin, report], :class => "small secondary button"
-        = link_to 'Destroy', [:admin, report], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
+        = link_to 'Visualizar', [:admin, report], :class => "small secondary button"
+        = link_to('Apagar', [:admin, report], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button") if User.find(current_user.id).has_role? :admin
 
 %p= link_to "+ Relatório", new_admin_report_path, :class => "button"

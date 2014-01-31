@@ -1,4 +1,4 @@
-- title "Admin/Beings"
+- title "Entidades"
 %h1 Entidades
 %br/
 
@@ -20,8 +20,8 @@
       //%td=#being.party.name
       %td= being.user.name
       %td
-        = link_to 'Show', [:admin, being], :class => "small secondary button"
-        = link_to 'Edit', edit_admin_being_path(being), :class => "small secondary button"
-        = link_to 'Destroy', [:admin, being], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
+        = link_to 'Visualizar', [:admin, being], :class => "small secondary button"
+        = link_to 'Editar', edit_admin_being_path(being), :class => "small secondary button"
+        = link_to('Apagar', [:admin, being], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button") if User.find(current_user.id).has_role? :admin
 
 %p= link_to "Cadastrar", new_admin_being_path, :class => "button"

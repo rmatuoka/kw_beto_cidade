@@ -10,8 +10,8 @@
     %tr
       %td= schooling.name
       %td
-        = link_to 'Show', [:admin, schooling], :class => "small secondary button"
-        = link_to 'Edit', edit_admin_schooling_path(schooling), :class => "small secondary button"
-        = link_to 'Destroy', [:admin, schooling], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
+        = link_to 'Visulizar', [:admin, schooling], :class => "small secondary button"
+        = link_to 'Editar', edit_admin_schooling_path(schooling), :class => "small secondary button"
+        = link_to('Apagar', [:admin, schooling], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button") if User.find(current_user.id).has_role? :admin
 
 %p= link_to "+ Escolaridade", new_admin_schooling_path, :class => "button"

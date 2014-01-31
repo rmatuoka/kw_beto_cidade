@@ -23,7 +23,7 @@
       <td><%= entity.presidente %></td>
       <td><%= link_to "Visualizar", admin_city_entity_path(@city,entity), :class => "small button secondary" %></td>
       <td><%= link_to "Editar", edit_admin_city_entity_path(@city,entity), :class => "small button secondary" %></td>
-      <td><%= link_to "Deletar", admin_city_entity_path(@city,entity), :class => "small button secondary", :confirm => 'Tem certeza?', :method => :delete %></td>
+      <td><%= link_to("Apagar", admin_city_entity_path(@city,entity), :class => "small button secondary", :confirm => 'Tem certeza?', :method => :delete) if User.find(current_user.id).has_role? :admin %></td>
     </tr>
   <% end %>
 </table>

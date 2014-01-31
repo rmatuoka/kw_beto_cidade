@@ -19,8 +19,14 @@
     = f.label :number, "Número"
     = f.text_field :number
   %p
+    = f.label :complement, "Complemento"
+    = f.text_field :complement
+  %p
+    = f.label :neighborhood, "Bairro"
+    = f.text_field :neighborhood     
+  %p
     = f.label :zip_code, "CEP"
-    = f.text_field :zip_code     
+    = f.text_field :zip_code
   %p
     = f.label :city_id, "Cidade"
     = f.select :city_id, @cities,{:include_blank=>true}, {:class => "chosen-select", :"data-placeholder"=>"Selecione a Cidade"}

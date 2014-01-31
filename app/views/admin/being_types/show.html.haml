@@ -6,6 +6,6 @@
   %strong Name:
   = @being_type.name
 %p
-  = link_to "Edit", edit_admin_being_type_path(@being_type), :class => "small secondary button"
-  =link_to "Destroy", [:admin, @being_type], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
-  =link_to "View All", admin_being_types_path, :class => "small secondary button"
+  = link_to "Editar", edit_admin_being_type_path(@being_type), :class => "small secondary button"
+  =link_to("Apagar", [:admin, @being_type], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button") if User.find(current_user.id).has_role? :admin
+  =link_to "Ver Todos", admin_being_types_path, :class => "small secondary button"

@@ -37,12 +37,12 @@
           //%li= link_to "Grupos",admin_groups_path, :class => "secondary small button cemporcento" 
           %li= link_to "Empresas",admin_companies_path, :class => "secondary small button cemporcento"          
         
-        - if User.find(current_user.id).has_role? :admin  
-          %h3 Gerenciamento
-          %ul.sub-menu
-            %li= link_to "Cadastro de Escolaridade",admin_schoolings_path, :class => "secondary small button cemporcento"
-            %li= link_to "Cadastro de Partidos",admin_parties_path, :class => "secondary small button cemporcento"
-            %li= link_to "Cadastro de Municípios",admin_cities_path, :class => "secondary small button cemporcento"
+        -# if User.find(current_user.id).has_role? :admin  
+        %h3 Gerenciamento
+        %ul.sub-menu
+          %li= link_to "Cadastro de Escolaridade",admin_schoolings_path, :class => "secondary small button cemporcento"
+          %li= link_to "Cadastro de Partidos",admin_parties_path, :class => "secondary small button cemporcento"
+          %li= link_to "Cadastro de Municípios",admin_cities_path, :class => "secondary small button cemporcento"  
       
         - if User.find(current_user.id).has_role? :admin
           %h3 Relatórios

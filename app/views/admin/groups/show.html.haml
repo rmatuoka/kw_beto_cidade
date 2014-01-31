@@ -7,6 +7,6 @@
   = @group.name
 
 %p
-  = link_to "Edit", edit_admin_group_path(@group), :class => "small secondary button"
-  = link_to "Destroy", [:admin, @group], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
-  = link_to "View All", admin_groups_path, :class => "small secondary button"
+  = link_to "Editar", edit_admin_group_path(@group), :class => "small secondary button"
+  = link_to("Apagar", [:admin, @group], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button") if User.find(current_user.id).has_role? :admin
+  = link_to "Ver todos", admin_groups_path, :class => "small secondary button"

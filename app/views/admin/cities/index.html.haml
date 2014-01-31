@@ -23,7 +23,7 @@
         = link_to "Visualizar", admin_city_path(city), :class => "small button secondary"
         = link_to "Editar", edit_admin_city_path(city), :class => "small button secondary"
         =# link_to "Entidades", admin_city_entities_path(city), :class => "small button secondary"
-        = link_to "Deletar", admin_city_path(city), :class => "small button secondary", :confirm => 'Are you sure?', :method => :delete
+        = link_to("Apagar", admin_city_path(city), :class => "small button secondary", :confirm => 'Are you sure?', :method => :delete) if User.find(current_user.id).has_role? :admin
 
 = will_paginate @cities
 :javascript

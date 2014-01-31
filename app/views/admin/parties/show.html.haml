@@ -7,6 +7,6 @@
   = @party.abreviation
 
 %p
-  = link_to "Edit", edit_admin_party_path(@party), :class => "small secondary button"
-  = link_to "Destroy", [:admin, @party], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button"
-  = link_to "View All", admin_parties_path, :class => "small secondary button"
+  = link_to "Editar", edit_admin_party_path(@party), :class => "small secondary button"
+  = link_to("Apagar", [:admin, @party], :confirm => 'Are you sure?', :method => :delete, :class => "small secondary button") if User.find(current_user.id).has_role? :admin
+  = link_to "Ver Todos", admin_parties_path, :class => "small secondary button"

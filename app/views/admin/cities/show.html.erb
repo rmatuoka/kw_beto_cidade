@@ -12,7 +12,7 @@
 </p>
 
 <p>
-  <%= link_to "Editar", edit_admin_city_path(@city), :class => "small button secondary" %> |
-  <%= link_to "Deletar", [:admin, @city], :class => "small button secondary", :confirm => 'Tem certeza?', :method => :delete %> |
-  <%= link_to "Visualizar Todas", admin_cities_path, :class => "small button secondary" %>
+  <%= link_to "Editar", edit_admin_city_path(@city), :class => "small button secondary" %> 
+  <%= link_to("Apagar", [:admin, @city], :class => "small button secondary", :confirm => 'Tem certeza?', :method => :delete ) if User.find(current_user.id).has_role? :admin %>
+  <%= link_to "Ver Todas", admin_cities_path, :class => "small button secondary" %>
 </p>

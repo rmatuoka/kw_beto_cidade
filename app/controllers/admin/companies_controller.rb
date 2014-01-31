@@ -5,7 +5,7 @@ class Admin::CompaniesController < ApplicationController
   
   layout "inadmin" 
   def index
-    @companies = Company.all
+    @companies = Company.all(:conditions => "id > 0")
   end
 
   def show
